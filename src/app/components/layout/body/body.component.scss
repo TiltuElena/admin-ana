@@ -1,0 +1,19 @@
+.body {
+  height: 100%;
+  //margin-left: 5rem;
+  width: 100%;
+  z-index: 0;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+  padding: 2rem 2rem 1rem 2rem;
+}
+
+.body-trimmed {
+  width: 100%;
+  //margin-left: 16.5625rem;
+}
+
+.body-md-screen {
+  width: 100%;
+  margin-left: 5rem;
+}

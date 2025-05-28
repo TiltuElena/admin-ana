@@ -1,0 +1,356 @@
+<section>
+  <button
+    pButton
+    pRipple
+    class="return-button"
+    [text]="true"
+    [plain]="true"
+    (click)="navigateToOrders()"
+  >
+    <span class="pi pi-arrow-left"> </span>
+    <span>{{
+      'ORDERS.EDIT.REDIRECT_TO_ORDERS_PAGE_BUTTON_LABEL' | translate
+    }}</span>
+  </button>
+
+  <div class="header">
+    <span class="header-title">
+      {{ 'ORDERS.EDIT.PAGE_TITLE' | translate }}
+    </span>
+  </div>
+
+  <div class="card-wrapper">
+    <div class="card-wrapper-left">
+      <p-card class="card">
+        <div class="card-header">
+          <span class="card-header-title">
+            {{ 'ORDERS.EDIT.ORDER_DETAILS_CARD.HEADER' | translate }}
+          </span>
+          <button
+            pButton
+            pRipple
+            [text]="true"
+            [plain]="true"
+            (click)="editOrder()"
+          >
+            <span>
+              {{
+                'ORDERS.EDIT.ORDER_DETAILS_CARD.EDIT_BUTTON_LABEL' | translate
+              }}
+            </span>
+          </button>
+        </div>
+
+        <p-divider />
+
+        <div class="card-body order-details-card">
+          <img
+            [alt]="orderData.user?.username"
+            [src]="
+              orderData.user?.photoUrl
+                ? 'http://localhost:3000' + orderData.user?.photoUrl
+                : defaultImage
+            "
+            width="60"
+          />
+          <div class="order-details-wrapper">
+            <div class="order-details">
+              <span class="order-details-title">
+                {{
+                  'ORDERS.EDIT.ORDER_DETAILS_CARD.CUSTOMER_LABEL' | translate
+                }}
+              </span>
+              <span class="order-details-customer-data">{{
+                orderData.user?.username
+              }}</span>
+            </div>
+            <div class="order-details">
+              <span class="order-details-title">
+                {{ 'ORDERS.EDIT.ORDER_DETAILS_CARD.EMAIL_LABEL' | translate }}
+              </span>
+              <span class="order-details-customer-data">{{
+                orderData.user?.email
+              }}</span>
+            </div>
+            <div class="order-details">
+              <span class="order-details-title">
+                {{ 'ORDERS.EDIT.ORDER_DETAILS_CARD.PHONE_LABEL' | translate }}
+              </span>
+              <span class="order-details-customer-data">{{
+                orderData.user?.phone
+              }}</span>
+            </div>
+            <div class="order-details">
+              <span class="order-details-title">
+                {{
+                  'ORDERS.EDIT.ORDER_DETAILS_CARD.ORDER_STATUS_LABEL'
+                    | translate
+                }}
+              </span>
+              <span class="order-details-customer-data">{{
+                orderData.status?.toUpperCase()
+              }}</span>
+            </div>
+            <div class="order-details">
+              <span class="order-details-title">
+                {{
+                  'ORDERS.EDIT.ORDER_DETAILS_CARD.BOOKED_FROM_LABEL' | translate
+                }}
+              </span>
+              <span class="order-details-customer-data">{{
+                orderData.booked_from | date
+              }}</span>
+            </div>
+            <div class="order-details">
+              <span class="order-details-title">
+                {{
+                  'ORDERS.EDIT.ORDER_DETAILS_CARD.BOOKED_TO_LABEL' | translate
+                }}
+              </span>
+              <span class="order-details-customer-data">{{
+                orderData.booked_to | date
+              }}</span>
+            </div>
+            <div class="order-details">
+              <span class="order-details-title">
+                {{
+                  'ORDERS.EDIT.ORDER_DETAILS_CARD.PAYMENT_STATUS_LABEL'
+                    | translate
+                }}
+              </span>
+              <span class="order-details-customer-data">
+                <!--                {{-->
+                <!--                orderData.payment_status-->
+                <!--              }}-->
+                Paid
+              </span>
+            </div>
+          </div>
+        </div>
+      </p-card>
+
+      <p-card class="card">
+        <div class="card-header">
+          <span class="card-header-title">
+            {{ 'ORDERS.EDIT.ORDER_ITEMS_CARD.HEADER' | translate }}
+          </span>
+          <!--          <button pButton pRipple [text]="true" [plain]="true">-->
+          <!--            <span>Edit</span>-->
+          <!--          </button>-->
+        </div>
+
+        <p-divider />
+
+        <div class="card-body">
+          <p-table
+            [value]="orderData.workplaces"
+            [tableStyle]="{ width: '100%' }"
+          >
+            <ng-template pTemplate="header">
+              <tr>
+                <th style="width: 10%">
+                  {{
+                    'ORDERS.EDIT.ORDER_ITEMS_CARD.ORDERS_TABLE.ID' | translate
+                  }}
+                </th>
+                <th style="width: 30%">
+                  {{
+                    'ORDERS.EDIT.ORDER_ITEMS_CARD.ORDERS_TABLE.NAME' | translate
+                  }}
+                </th>
+                <th style="width: 40%">
+                  {{
+                    'ORDERS.EDIT.ORDER_ITEMS_CARD.ORDERS_TABLE.DESCRIPTION'
+                      | translate
+                  }}
+                </th>
+                <th style="width: 20%">
+                  {{
+                    'ORDERS.EDIT.ORDER_ITEMS_CARD.ORDERS_TABLE.BOOKING_PRICE'
+                      | translate
+                  }}
+                </th>
+              </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-workplace>
+              <tr>
+                <td>{{ workplace.workplace?.id }}</td>
+                <td>{{ workplace.workplace?.name_en }}</td>
+                <td>{{ workplace.workplace?.description_en }}</td>
+                <td>{{ workplace.workplace?.booking_price | mdlCurrency }}</td>
+              </tr>
+            </ng-template>
+            <ng-template pTemplate="summary">
+              <div class="total-price-data">
+                <span>{{
+                  'ORDERS.EDIT.ORDER_ITEMS_CARD.ORDERS_TABLE.SUBTOTAL'
+                    | translate
+                }}</span>
+                <span>{{ totalBookingPrice | mdlCurrency }}</span>
+              </div>
+
+              <p-divider />
+
+              <div class="total-price-data">
+                <span>{{
+                  'ORDERS.EDIT.ORDER_ITEMS_CARD.ORDERS_TABLE.DISCOUNT'
+                    | translate
+                }}</span>
+                <span>{{ 0 | mdlCurrency }}</span>
+              </div>
+
+              <p-divider />
+
+              <div class="total-price-data">
+                <span>{{
+                  'ORDERS.EDIT.ORDER_ITEMS_CARD.ORDERS_TABLE.TOTAL' | translate
+                }}</span>
+                <span>{{ totalBookingPrice | mdlCurrency }}</span>
+              </div>
+            </ng-template>
+          </p-table>
+        </div>
+      </p-card>
+    </div>
+
+    <p-card class="card actions-card">
+      <div class="card-header">
+        <span class="card-header-title">
+          {{ 'ORDERS.EDIT.QUICK_ACTIONS_CARD.HEADER' | translate }}
+        </span>
+      </div>
+
+      <p-divider />
+
+      <div class="card-body">
+        <p-dropdown
+          [options]="statusOptions"
+          [(ngModel)]="selectedStatus"
+          optionLabel="label"
+          placeholder="{{
+            'ORDERS.EDIT.QUICK_ACTIONS_CARD.SELECT_STATUS_PLACEHOLDER'
+              | translate
+          }}"
+        >
+          <ng-template pTemplate="selectedItem">
+            @if(selectedStatus){
+            <div class="dropdown-item">
+              <p-tag [severity]="getSeverity(selectedStatus.value)" />
+              <div>{{ selectedStatus.label }}</div>
+            </div>
+            }
+          </ng-template>
+          <ng-template let-option pTemplate="item">
+            <div class="dropdown-item">
+              <p-tag [severity]="getSeverity(option.value)" />
+              <div>{{ option.label }}</div>
+            </div>
+          </ng-template>
+        </p-dropdown>
+
+        <button
+          pButton
+          pRipple
+          class="save-button"
+          severity="success"
+          (click)="saveQuickChanges()"
+        >
+          <span>{{
+            'ORDERS.EDIT.QUICK_ACTIONS_CARD.SAVE_CHANGES_BUTTON_LABEL'
+              | translate
+          }}</span>
+        </button>
+
+        <span>
+          {{
+            'ORDERS.EDIT.QUICK_ACTIONS_CARD.LAST_UPDATED_TEXT_ADDITION'
+              | translate
+          }}
+          {{
+          orderData.createdAt | date
+          }}
+          </span
+        >
+
+        <p-divider />
+
+        <div class="custom-stepper">
+          <div class="custom-stepper-item">
+            <span class="pi pi-check custom-stepper-icon done"></span>
+            <span class="custom-stepper-item-details"
+              >{{
+                'ORDERS.EDIT.QUICK_ACTIONS_CARD.STEPPER.PLACED_AT_LABEL'
+                  | translate
+              }}
+              {{ orderData.createdAt | date }}</span
+            >
+          </div>
+
+          <hr />
+
+          <div class="custom-stepper-item">
+            <span class="pi pi-check custom-stepper-icon"></span>
+            <span class="custom-stepper-item-details">
+              {{
+                'ORDERS.EDIT.QUICK_ACTIONS_CARD.STEPPER.PROCESSED_LABEL'
+                  | translate
+              }}
+            </span>
+          </div>
+
+          <hr />
+
+          <div class="custom-stepper-item">
+            <span class="pi pi-check custom-stepper-icon"></span>
+            <span class="custom-stepper-item-details">
+              {{
+                'ORDERS.EDIT.QUICK_ACTIONS_CARD.STEPPER.COMPLETE_LABEL'
+                  | translate
+              }}
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <p-divider />
+
+      <div class="card-footer">
+        <button
+          class="card-footer-item"
+          pButton
+          pRipple
+          [text]="true"
+          severity="success"
+          (click)="markAsPaid()"
+        >
+          <span class="pi pi-check-circle"></span>
+          <span>{{
+            'ORDERS.EDIT.QUICK_ACTIONS_CARD.MARK_AS_PAID_BUTTON_LABEL'
+              | translate
+          }}</span>
+        </button>
+
+        <button
+          class="card-footer-item"
+          pButton
+          pRipple
+          [text]="true"
+          severity="danger"
+          (click)="deleteOrder()"
+        >
+          <span class="pi pi-trash"></span>
+          <span>{{
+            'ORDERS.EDIT.QUICK_ACTIONS_CARD.DELETE_ORDER_BUTTON_LABEL'
+              | translate
+          }}</span>
+        </button>
+      </div>
+    </p-card>
+  </div>
+</section>
+
+<app-dialog
+  [orderDialog]="orderDialog"
+  (changeDialogState)="handleState($event)"
+>
+</app-dialog>

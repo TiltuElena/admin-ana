@@ -1,0 +1,108 @@
+:host ::ng-deep {
+  .p-toolbar {
+    background: var(--primary);
+    border-radius: 0;
+    //box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+  }
+
+  .p-button {
+    background: var(--primary);
+    border-color: var(--primary);
+    min-width: 10px;
+    padding: 10px 15px;
+    cursor: pointer;
+
+    &:hover {
+      background: var(--primary);
+    }
+  }
+  .p-button.p-button-icon-only {
+    //width: 10px
+  }
+
+  .p-button-icon {
+    color: white;
+    min-width: 0;
+    padding: 5px 0;
+  }
+
+  .p-menu {
+    width: 8rem;
+  }
+}
+
+//header {
+//  background: #388e3c;
+//  display: flex;
+//  justify-content: space-between;
+//  padding: 10px 40px 10px 40px;
+//}
+
+//.header-right {
+//  display: flex;
+//  align-items: center;
+//  gap: .5rem;
+//}
+
+.logo {
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 20px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  width: 130px;
+  gap: 0;
+}
+
+.p-menuitem-content {
+  display: flex;
+  justify-content: center;
+
+  .lng-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 0;
+    width: 5rem;
+  }
+}
+
+.flag-img {
+  width: 24px;
+  height: 24px;
+}
+
+.p-menuitem-link {
+  display: flex;
+  justify-content: space-around;
+}
+
+.user-button {
+  padding: 5px;
+  user-select: none;
+
+  .avatar-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+
+    .user-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: start;
+      color: white;
+      font-weight: 300;
+      width: 150px;
+
+      .user-name {
+        font-weight: 700;
+      }
+    }
+  }
+}

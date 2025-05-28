@@ -1,0 +1,9 @@
+<div class="container">
+  <app-header></app-header>
+  <app-sidebar (toggleSideNav)="onToggleSideNav($event)"></app-sidebar>
+  <app-body
+    [collapsed]="isSideNavCollapsed"
+    [screenWidth]="screenWidth"
+  ></app-body>
+  <app-confirm-dialog></app-confirm-dialog>
+</div>

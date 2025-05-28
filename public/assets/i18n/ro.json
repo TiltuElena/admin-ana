@@ -1,0 +1,377 @@
+{
+  "LOGIN": {
+    "FORM_TITLE": "Autentificare",
+    "REDIRECT_TO_REGISTER": "Înregistrare",
+    "EMAIL_LABEL": "Adresă de email",
+    "EMAIL_REQUIRED_ERROR": "Emailul este necesar",
+    "EMAIL_INVALID_ERROR": "Email invalid",
+    "PASSWORD_LABEL": "Parolă",
+    "PASSWORD_REQUIRED_ERROR": "Parola este necesară",
+    "SUBMIT_BUTTON_TITLE": "Autentificare"
+  },
+
+  "REGISTER": {
+    "FORM_TITLE": "Înregistrare",
+    "REDIRECT_TO_LOGIN": "Autentificare",
+    "USERNAME_LABEL": "Nume de utilizator",
+    "USERNAME_REQUIRED_ERROR": "Numele de utilizator este necesar",
+    "EMAIL_LABEL": "Adresă de email",
+    "EMAIL_REQUIRED_ERROR": "Emailul este necesar",
+    "EMAIL_INVALID_ERROR": "Email invalid",
+    "PASSWORD_LABEL": "Parolă",
+    "PASSWORD_REQUIRED_ERROR": "Parola este necesară",
+    "CONFIRM_PASSWORD_LABEL": "Confirmare parolă",
+    "CONFIRM_PASSWORD_REQUIRED_ERROR": "Confirmarea parolei este necesară",
+    "PASSWORD_MISMATCH_ERROR": "Parolele nu se potrivesc",
+    "SUBMIT_BUTTON_TITLE": "Înregistrare"
+  },
+
+  "BOOKING": {
+    "PAGE_TITLE": "Editor Schemă Rezervări",
+
+    "SCHEMA_EDITOR": {
+      "WORKPLACE_EDITOR": {
+        "WORKPLACE_EDITOR_TITLE": "Editor Spații de Muncă",
+        "NAME_LABEL": "Nume",
+        "NAME_REQUIRED_ERROR": "Numele este necesar",
+        "DESCRIPTION_LABEL": "Descriere",
+        "DESCRIPTION_REQUIRED_ERROR": "Descrierea este necesară",
+        "POSITION_X_LABEL": "Poziția X",
+        "POSITION_X_REQUIRED_ERROR": "Poziția X este necesară",
+        "POSITION_Y_LABEL": "Poziția Y",
+        "POSITION_Y_REQUIRED_ERROR": "Poziția Y este necesară",
+        "BOOKING_PRICE_LABEL": "Preț de rezervare",
+        "BOOKING_PRICE_REQUIRED_ERROR": "Prețul de rezervare este necesar",
+        "ROOM_ID_LABEL": "ID Cameră",
+        "ROOM_ID_REQUIRED_ERROR": "ID-ul camerei este obligatoriu",
+        "EDIT_WORKPLACE_BUTTON_LABEL": "Editează Spațiul de Muncă",
+        "DELETE_WORKPLACE_BUTTON_LABEL": "Șterge Spațiul de Muncă",
+        "CREATE_WORKPLACE_BUTTON_LABEL": "Crează spațiu de Muncă"
+      },
+
+      "ROOM_EDITOR": {
+        "ROOM_EDITOR_TITLE": "Editor Cameră",
+        "NAME_LABEL": "Nume",
+        "NAME_REQUIRED_ERROR": "Numele este necesar",
+        "DESCRIPTION_LABEL": "Descriere",
+        "DESCRIPTION_REQUIRED_ERROR": "Descrierea este necesară",
+        "AREA_LABEL": "Suprafață",
+        "AREA_REQUIRED_ERROR": "Suprafața este necesară",
+        "LENGTH_LABEL": "Lungime",
+        "LENGTH_REQUIRED_ERROR": "Lungimea este necesară",
+        "WIDTH_LABEL": "Lățime",
+        "WIDTH_REQUIRED_ERROR": "Lățimea este necesară",
+        "FLOOR_NUMBER_LABEL": "Numărul etajului",
+        "FLOOR_NUMBER_PLACEHOLDER": "Selectați un etaj",
+        "FLOOR_NUMBER_ERROR": "Numărul etajului este necesar",
+        "EDIT_ROOM_BUTTON_LABEL": "Editează Camera",
+        "DELETE_ROOM_BUTTON_LABEL": "Șterge Camera"
+      },
+
+      "PLACEHOLDER": {
+        "PLACEHOLDER_TITLE": "Adaugă, Editează sau Șterge",
+        "PLACEHOLDER_SUBTITLE": "Alege o cameră sau un spațiu de muncă",
+        "NEW_WORKPLACE_LABEL": "Spațiu de Muncă Nou"
+      }
+    }
+  },
+
+  "CUSTOMERS": {
+    "PAGE_TITLE": "Clienți",
+    "NEW_BUTTON_LABEL": "Nou",
+    "GLOBAL_SEARCH_INPUT_PLACEHOLDER": "Caută cuvântul",
+
+    "TABLE_HEADER": {
+      "NAME": "Nume",
+      "EMAIL": "Email",
+      "PHONE": "Telefon",
+      "CREATED_AT": "Creat La",
+      "NR_OF_ORDERS": "Nr. de comenzi"
+    },
+
+    "GLOBAL_SEARCH_PLACEHOLDER": "Nicio intrare găsită.",
+
+    "CUSTOMERS_DIALOG_FORM": {
+      "HEADER_LABEL": "Detalii despre client",
+      "NAME_LABEL": "Nume",
+      "NAME_REQUIRED_ERROR": "Numele este necesar",
+      "EMAIL_LABEL": "Email",
+      "EMAIL_REQUIRED_ERROR": "Emailul este necesar",
+      "EMAIL_INVALID_ERROR": "Email invalid",
+      "PHONE_LABEL": "Telefon",
+      "PHONE_REQUIRED_ERROR": "Telefonul este necesar",
+      "PHONE_INVALID_ERROR": "Telefon invalid",
+      "DIALOG_ACTIONS_CANCEL_BUTTON": "Anulează",
+      "DIALOG_ACTIONS_SAVE_BUTTON": "Salvează"
+    }
+  },
+
+  "DASHBOARD": {
+    "PAGE_TITLE": "Rapoarte",
+
+    "DATA_OPTIONS_DAY": "Zi",
+    "DATA_OPTIONS_WEEK": "Săptămână",
+    "DATA_OPTIONS_MONTH": "Lună",
+    "DATA_OPTIONS_YEAR": "An",
+
+    "DASHBOARD_OVERVIEW_ORDERS_CARD_TITLE": "Comenzi",
+    "REDIRECT_TO_ORDERS_PAGE_BUTTON_LABEL": "Comenzi",
+    "DASHBOARD_OVERVIEW_CUSTOMERS_CARD_TITLE": "Clienți",
+    "REDIRECT_TO_CUSTOMERS_PAGE_BUTTON_LABEL": "Clienți",
+    "DASHBOARD_OVERVIEW_REVENUE_CARD_TITLE": "Venit Lunar",
+
+    "ORDERS_STATUS_MANAGEMENT_NEW_TITLE": "Comenzi Noi",
+    "ORDERS_STATUS_MANAGEMENT_CONFIRMED_TITLE": "Comenzi Confirmate",
+    "ORDERS_STATUS_MANAGEMENT_REJECTED_TITLE": "Comenzi Respinse",
+
+    "CUSTOMERS_TABLE": {
+      "TITLE": "Ultimii Clienți",
+      "REDIRECT_TO_CUSTOMERS": "Vezi toți",
+      "NR_OF_ORDERS_CELL_TEXT_ADDITION": "comenzi plasate",
+      "MONEY_SPENT_CELL_TEXT_ADDITION": "cheltuit"
+    },
+
+    "ORDERS_CHART": {
+      "TITLE": "Statistici Comenzi",
+      "CHART_LABEL": "Comenzi",
+
+      "CHART_INFO_PERIOD_WEEK": "Ultimile 7 zile",
+      "CHART_INFO_PERIOD_MONTH": "Ultima lună",
+      "CHART_INFO_PERIOD_YEAR": "Ultimul an"
+    },
+
+    "ORDERS_TABLE": {
+      "TITLE": "Ultimele Comenzi",
+      "REDIRECT_TO_ORDERS": "Vezi toate",
+      "NR_OF_WORKPLACES_CELL_TEXT_ADDITION": "spații de lucru",
+      "TOTAL_CELL_TEXT_ADDITION": "total",
+      "FROM_DATE_CELL_TEXT_ADDITION": "De la",
+      "TO_DATE_CELL_TEXT_ADDITION": "Până la"
+    },
+
+    "REVENUE_CHART": {
+      "TITLE": "Statistici Venituri",
+      "CHART_LABEL": "Venituri",
+
+      "CHART_INFO_PERIOD_WEEK": "Ultimile 7 zile",
+      "CHART_INFO_PERIOD_MONTH": "Ultima lună",
+      "CHART_INFO_PERIOD_YEAR": "Ultimul an"
+    },
+
+    "DAYS_OF_WEEK": {
+      "MONDAY": "Luni",
+      "TUESDAY": "Marți",
+      "WEDNESDAY": "Miercuri",
+      "THURSDAY": "Joi",
+      "FRIDAY": "Vineri",
+      "SATURDAY": "Sâmbătă",
+      "SUNDAY": "Duminică"
+    },
+
+    "MONTHS_OF_YEAR": {
+      "JANUARY": "Ianuarie",
+      "FEBRUARY": "Februarie",
+      "MARCH": "Martie",
+      "APRIL": "Aprilie",
+      "MAY": "Mai",
+      "JUNE": "Iunie",
+      "JULY": "Iulie",
+      "AUGUST": "August",
+      "SEPTEMBER": "Septembrie",
+      "OCTOBER": "Octombrie",
+      "NOVEMBER": "Noiembrie",
+      "DECEMBER": "Decembrie"
+    }
+  },
+
+  "NOT_FOUND": {
+    "PAGE_TITLE": "Nu există!",
+    "PAGE_SUBTITLE": "Pagina cerută nu există.",
+    "REDIRECT_TO_DASHBOARD_BUTTON_LABEL": "Întoarcere la pagina princcipală"
+  },
+
+  "ORDERS": {
+    "CREATE": {
+      "REDIRECT_TO_ORDERS_PAGE_BUTTON_LABEL": "Comenzi",
+      "PAGE_TITLE": "Crează Comandă",
+      "USERNAME_LABEL": "Nume de utilizator",
+      "USERNAME_PLACEHOLDER": "Selectați un client",
+      "USERNAME_REQUIRED_ERROR": "Numele de utilizator este necesar",
+      "EMAIL_LABEL": "Adresă de email",
+      "EMAIL_REQUIRED_ERROR": "Emailul este necesar",
+      "EMAIL_INVALID_ERROR": "Email invalid",
+      "BOOKED_FROM_LABEL": "Rezervat de la",
+      "BOOKED_FROM_PLACEHOLDER": "ZZ/LL/AAAA",
+      "BOOKED_FROM_REQUIRED_ERROR": "Data este necesară",
+      "BOOKED_TO_LABEL": "Rezervat până la",
+      "BOOKED_ТО_PLACEHOLDER": "ZZ/LL/AAAA",
+      "BOOKED_TO_REQUIRED_ERROR": "Data este necesară",
+      "BOOKED_TO_SMALLER_THAN_BOOKED_FROM_ERROR": "Data de încheiere trebuie să fie după data de început",
+      "STATUS_LABEL": "Stare",
+      "STATUS_PLACEHOLDER": "Selectați Starea",
+      "STATUS_REQUIRED_ERROR": "Starea este necesară",
+      "PAYMENT_STATUS_LABEL": "Starea plății",
+      "PAYMENT_STATUS_PLACEHOLDER": "Selectați Starea Plății",
+      "PAYMENT_STATUS_REQUIRED_ERROR": "Starea plății este necesară",
+      "ADD_WORKPLACE_BUTTON_LABEL": "Adaugă loc de muncă",
+      "NO_SELECTED_WORKPLACE_ERROR": "Trebuie să selectați locuri de muncă",
+
+      "SELECTED_WORKPLACES_TABLE": {
+        "ID": "ID",
+        "NAME": "Nume",
+        "DESCRIPTION": "Descriere",
+        "BOOKING_PRICE": "Preț de rezervare",
+
+        "TOTAL": "Total"
+      },
+
+      "ADDITIONAL_NOTES_LABEL": "Note adiționale",
+      "ADDITIONAL_NOTES_PLACEHOLDER": "Adăugați note adiționale",
+      "CANCEL_BUTTON_LABEL": "Anulează",
+      "CREATE_BUTTON_LABEL": "Crează",
+
+      "WORKPLACES_DIALOG_TABLE": {
+        "HEADER_LABEL": "Detalii comandă",
+        "ID": "Id",
+        "NAME": "Nume",
+        "DESCRIPTION": "Descriere",
+        "BOOKING_PRICE": "Preț de rezervare",
+
+        "ROOM_ID_TEXT_ADDITION": "ID Cameră:",
+        "CANCEL_BUTTON_LABEL": "Anulează",
+        "ADD_BUTTON_LABEL": "Adaugă"
+      }
+    },
+
+    "EDIT": {
+      "REDIRECT_TO_ORDERS_PAGE_BUTTON_LABEL": "Comenzi",
+      "PAGE_TITLE": "Comandă",
+
+      "ORDER_DETAILS_CARD": {
+        "HEADER": "Detalii Comandă",
+        "EDIT_BUTTON_LABEL": "Editează",
+        "CUSTOMER_LABEL": "Client",
+        "EMAIL_LABEL": "Adresă de email",
+        "PHONE_LABEL": "Număr de telefon",
+        "ORDER_STATUS_LABEL": "Starea comenzii",
+        "BOOKED_FROM_LABEL": "Rezervat de la",
+        "BOOKED_TO_LABEL": "Rezervat până la",
+        "PAYMENT_STATUS_LABEL": "Starea plății"
+      },
+
+      "ORDER_ITEMS_CARD": {
+        "HEADER": "Articole Comandă",
+
+        "ORDERS_TABLE": {
+          "ID": "Id",
+          "NAME": "Nume",
+          "DESCRIPTION": "Descriere",
+          "BOOKING_PRICE": "Preț de rezervare",
+          "SUBTOTAL": "Subtotal",
+          "DISCOUNT": "Discount",
+          "TOTAL": "Total"
+        }
+      },
+
+      "QUICK_ACTIONS_CARD": {
+        "HEADER": "Acțiuni Rapide",
+        "SELECT_STATUS_PLACEHOLDER": "Selectați Statutul",
+        "SAVE_CHANGES_BUTTON_LABEL": "Salvează Modificările",
+        "LAST_UPDATED_TEXT_ADDITION": "Actualizat",
+
+        "STEPPER": {
+          "PLACED_AT_LABEL": "Plasat La",
+          "PROCESSED_LABEL": "Procesat",
+          "COMPLETE_LABEL": "Complet"
+        },
+
+        "MARK_AS_PAID_BUTTON_LABEL": "Marchează ca plătit",
+        "DELETE_ORDER_BUTTON_LABEL": "Șterge comanda"
+      },
+
+      "EDIT_ORDER_DETAILS_DIALOG_FORM": {
+        "CUSTOMER_LABEL": "Client",
+        "CUSTOMER_PLACEHOLDER": "Selectați un client",
+        "CUSTOMER_REQUIRED_ERROR": "Clientul este necesar",
+        "EMAIL_LABEL": "Email",
+        "EMAIL_REQUIRED_ERROR": "Emailul este necesar",
+        "EMAIL_INVALID_ERROR": "Email invalid",
+        "PHONE_LABEL": "Telefon",
+        "PHONE_REQUIRED_ERROR": "Telefonul este necesar",
+        "PHONE_INVALID_ERROR": "Telefon invalid",
+        "BOOKED_FROM_LABEL": "Rezervat de la",
+        "BOOKED_FROM_PLACEHOLDER": "ZZ/LL/AAAA",
+        "BOOKED_FROM_REQUIRED_ERROR": "Data este necesară",
+        "BOOKED_TO_LABEL": "Rezervat până la",
+        "BOOKED_TO_PLACEHOLDER": "ZZ/LL/AAAA",
+        "BOOKED_TO_REQUIRED_ERROR": "Data este necesară",
+        "BOOKED_TO_SMALLER_THAN_BOOKED_FROM_ERROR": "Data de încheiere trebuie să fie după data de început",
+        "STATUS_LABEL": "Stare",
+        "STATUS_PLACEHOLDER": "Selectați Statutul",
+        "STATUS_REQUIRED_ERROR": "Starea este necesară",
+        "PAYMENT_STATUS_LABEL": "Starea plății",
+        "PAYMENT_STATUS_PLACEHOLDER": "Selectați Starea plății",
+        "PAYMENT_STATUS_REQUIRED_ERROR": "Starea plății este necesară",
+        "DIALOG_ACTIONS_CANCEL_BUTTON": "Anulează",
+        "DIALOG_ACTIONS_SAVE_BUTTON": "Salvează Modificările"
+      }
+    },
+
+    "VIEW": {
+      "PAGE_TITLE": "Comenzi",
+      "NEW_BUTTON_LABEL": "Nou",
+      "GLOBAL_SEARCH_INPUT_PLACEHOLDER": "Caută cuvântul",
+
+      "TABLE_HEADER": {
+        "ID": "Id",
+        "CREATED_AT": "Creat La",
+        "USERNAME": "Nume utilizator",
+        "BOOKED_FROM": "Rezervat de la",
+        "BOOKED_TO": "Rezervat până la",
+        "NUMBER_OF_WORKPLACES": "Nr. de spații",
+        "TOTAL": "Total",
+        "STATUS": "Stare"
+      },
+
+      "FILTER_STATUS_PLACEHOLDER": "Selectați statutul",
+
+      "GLOBAL_SEARCH_PLACEHOLDER": "Nicio intrare găsită.",
+
+      "ORDERS_OVERVIEW": {
+        "TITLE": "Total venituri nete",
+        "FOOTER_LEFT": "Dintr-un total de",
+        "FOOTER_RIGHT": "Comenzi",
+
+        "CHART_LABEL_PAID": "Plătit",
+        "CHART_LABEL_NOT_PAID": "Neplătit"
+      }
+    }
+  },
+
+  "SETTINGS": {
+    "USER_SETTINGS": {
+      "SECTION_TITLE": "Setări Cont",
+      "CHANGE_USER_AVATAR_BUTTON_LABEL": "Schimbă",
+      "DELETE_USER_AVATAR_BUTTON_LABEL": "Șterge",
+      "USERNAME_LABEL": "Nume de utilizator",
+      "USERNAME_REQUIRED_ERROR": "Numele de utilizator este necesar",
+      "EMAIL_LABEL": "Adresă de email",
+      "EMAIL_REQUIRED_ERROR": "Emailul este necesar",
+      "EMAIL_INVALID_ERROR": "Email invalid",
+      "SAVE_BUTTON_LABEL": "Salvează modificările"
+    },
+
+    "PASSWORD_SETTINGS": {
+      "SECTION_TITLE": "Schimbă Parola",
+      "CURRENT_PASSWORD_LABEL": "Parola curentă",
+      "CURRENT_PASSWORD_REQUIRED_ERROR": "Parola curentă este necesară",
+      "NEW_PASSWORD_LABEL": "Parolă nouă",
+      "NEW_PASSWORD_REQUIRED_ERROR": "Parola nouă este necesară",
+      "NEW_PASSWORD_MATCH_ERROR": "Noua parolă trebuie să fie diferită de cea veche",
+      "CONFIRM_PASSWORD_LABEL": "Confirmare parolă",
+      "CONFIRM_PASSWORD_REQUIRED_ERROR": "Confirmarea parolei este necesară",
+      "CONFIRM_PASSWORD_MISMATCH": "Parolele nu se potrivesc",
+      "CHANGE_PASSWORD_BUTTON_LABEL": "Schimbă parola"
+    }
+  }
+}

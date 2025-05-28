@@ -1,0 +1,85 @@
+<div class="card">
+  <div class="login-form-container">
+    <span class="login-form-header">
+      <h2 class="login-form-header-item">
+        {{ 'LOGIN.FORM_TITLE' | translate }}
+      </h2>
+      <h4 class="login-form-header-item" [routerLink]="registerRoute">
+        {{ 'LOGIN.REDIRECT_TO_REGISTER' | translate }}
+      </h4>
+    </span>
+
+    <form class="login-form" [formGroup]="loginForm">
+      <div class="login-form-fields">
+        <div class="form-field">
+          <span>{{ 'LOGIN.EMAIL_LABEL' | translate }}</span>
+          <input
+            type="text"
+            pInputText
+            formControlName="email"
+            id="email"
+            [ngClass]="{
+              'ng-invalid ng-dirty':
+                loginForm.get('email')?.touched &&
+                loginForm.get('email')?.invalid
+            }"
+          />
+          @if(loginForm.get('email')?.hasError('required') &&
+          loginForm.get('email')?.touched){
+          <div class="p-error">
+            {{ 'LOGIN.EMAIL_REQUIRED_ERROR' | translate }}
+          </div>
+          } @else if (loginForm.get('email')?.hasError('email')){
+          <div class="p-error">
+            {{ 'LOGIN.EMAIL_INVALID_ERROR' | translate }}
+          </div>
+          }
+        </div>
+
+        <div class="form-field">
+          <span>{{ 'LOGIN.PASSWORD_LABEL' | translate }}</span>
+          <p-password
+            formControlName="password"
+            required
+            [toggleMask]="true"
+            [feedback]="false"
+            id="password"
+            [ngClass]="{
+              'ng-invalid ng-dirty':
+                loginForm.get('password')?.touched &&
+                loginForm.get('password')?.invalid
+            }"
+          />
+          @if(loginForm.get('password')?.hasError('required') &&
+          loginForm.get('password')?.touched){
+          <div class="p-error">
+            {{ 'LOGIN.PASSWORD_REQUIRED_ERROR' | translate }}
+          </div>
+          }
+        </div>
+      </div>
+
+      <div class="button-container">
+        <!--        <p-button-->
+        <!--          label="Login"-->
+        <!--          class="p-button-success"-->
+        <!--          severity="success"-->
+        <!--          [raised]="true"-->
+        <!--          (click)="submit()"-->
+        <!--        ></p-button>-->
+
+        <button
+          pButton
+          pRipple
+          class="p-button-success button"
+          severity="success"
+          [raised]="true"
+          (click)="submit()"
+        >
+         <span> {{ 'LOGIN.SUBMIT_BUTTON_TITLE' | translate }}</span>
+        </button>
+      </div>
+    </form>
+  </div>
+  <!--  <span class="form-forgot-password">Forgot password</span>-->
+</div>

@@ -1,0 +1,88 @@
+section {
+  display: flex;
+  gap: 20px;
+
+  .container-svg {
+    width: 700px;
+
+    path {
+      stroke: #64717d;
+      stroke-width: 2.404;
+      fill: none;
+    }
+
+    .room-svg {
+      transition: ease 0.5s;
+      fill: lightgray;
+
+      &:hover {
+        fill: gainsboro;
+        cursor: pointer;
+      }
+    }
+
+    .room-svg.selected {
+      fill: #efeec3;
+
+      &:hover {
+        fill: #efeeb4;
+      }
+    }
+
+    #room-7-svg {
+      transform: translate(0.000001px, 3.326378px);
+    }
+
+    .workplace-svg {
+      fill: #58b368;
+      cursor: pointer;
+      stroke: black;
+      stroke-width: 1;
+
+      transform: translate3d(0px, 0px, 0px);
+      transition: ease 0.5s;
+
+      &:hover {
+        fill: #62b771;
+      }
+
+      &:active {
+        //fill: red;
+      }
+    }
+
+    .workplace-svg.selected {
+      //fill: #66a3ff;
+      //
+      //&:hover {
+      //  fill: #87ceeb;
+      //}
+
+      fill: #efeec3;
+
+      &:hover {
+        fill: #efeeb4;
+      }
+    }
+
+    .workplace-svg.temporary {
+      fill: #66a3ff;;
+
+      &:hover {
+        fill: #87ceeb;
+      }
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .container-svg {
+    width: 600px;
+  }
+}
+
+@media (max-width: 700px) {
+  .container-svg {
+    width: 500px;
+  }
+}

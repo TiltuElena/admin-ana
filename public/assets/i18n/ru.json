@@ -1,0 +1,377 @@
+{
+  "LOGIN": {
+    "FORM_TITLE": "Вход",
+    "REDIRECT_TO_REGISTER": "Регистрация",
+    "EMAIL_LABEL": "Электронная почта",
+    "EMAIL_REQUIRED_ERROR": "Электронная почта обязательна",
+    "EMAIL_INVALID_ERROR": "Неверный адрес электронной почты",
+    "PASSWORD_LABEL": "Пароль",
+    "PASSWORD_REQUIRED_ERROR": "Пароль обязателен",
+    "SUBMIT_BUTTON_TITLE": "Войти"
+  },
+
+  "REGISTER": {
+    "FORM_TITLE": "Регистрация",
+    "REDIRECT_TO_LOGIN": "Вход",
+    "USERNAME_LABEL": "Имя пользователя",
+    "USERNAME_REQUIRED_ERROR": "Имя пользователя обязательно",
+    "EMAIL_LABEL": "Электронная почта",
+    "EMAIL_REQUIRED_ERROR": "Электронная почта обязательна",
+    "EMAIL_INVALID_ERROR": "Неверный адрес электронной почты",
+    "PASSWORD_LABEL": "Пароль",
+    "PASSWORD_REQUIRED_ERROR": "Пароль обязателен",
+    "CONFIRM_PASSWORD_LABEL": "Подтверждение пароля",
+    "CONFIRM_PASSWORD_REQUIRED_ERROR": "Подтверждение пароля обязательно",
+    "PASSWORD_MISMATCH_ERROR": "Пароли не совпадают",
+    "SUBMIT_BUTTON_TITLE": "Зарегистрироваться"
+  },
+
+  "BOOKING": {
+    "PAGE_TITLE": "Редактор Схем Бронирования",
+
+    "SCHEMA_EDITOR": {
+      "WORKPLACE_EDITOR": {
+        "WORKPLACE_EDITOR_TITLE": "Редактор Рабочих Мест",
+        "NAME_LABEL": "Имя",
+        "NAME_REQUIRED_ERROR": "Имя обязательно",
+        "DESCRIPTION_LABEL": "Описание",
+        "DESCRIPTION_REQUIRED_ERROR": "Описание обязательно",
+        "POSITION_X_LABEL": "Позиция X",
+        "POSITION_X_REQUIRED_ERROR": "Позиция X обязательна",
+        "POSITION_Y_LABEL": "Позиция Y",
+        "POSITION_Y_REQUIRED_ERROR": "Позиция Y обязательна",
+        "BOOKING_PRICE_LABEL": "Цена бронирования",
+        "BOOKING_PRICE_REQUIRED_ERROR": "Цена бронирования обязательна",
+        "ROOM_ID_LABEL": "ID комнаты",
+        "ROOM_ID_REQUIRED_ERROR": "Требуется указать ID комнаты",
+        "EDIT_WORKPLACE_BUTTON_LABEL": "Редактировать рабочее место",
+        "DELETE_WORKPLACE_BUTTON_LABEL": "Удалить рабочее место",
+        "CREATE_WORKPLACE_BUTTON_LABEL": "Создаъ рабочее место"
+      },
+
+      "ROOM_EDITOR": {
+        "ROOM_EDITOR_TITLE": "Редактор Комнаты",
+        "NAME_LABEL": "Имя",
+        "NAME_REQUIRED_ERROR": "Имя обязательно",
+        "DESCRIPTION_LABEL": "Описание",
+        "DESCRIPTION_REQUIRED_ERROR": "Описание обязательно",
+        "AREA_LABEL": "Площадь",
+        "AREA_REQUIRED_ERROR": "Площадь обязательна",
+        "LENGTH_LABEL": "Длина",
+        "LENGTH_REQUIRED_ERROR": "Длина обязательна",
+        "WIDTH_LABEL": "Ширина",
+        "WIDTH_REQUIRED_ERROR": "Ширина обязательна",
+        "FLOOR_NUMBER_LABEL": "Номер этажа",
+        "FLOOR_NUMBER_PLACEHOLDER": "Выберите этаж",
+        "FLOOR_NUMBER_ERROR": "Номер этажа обязателен",
+        "EDIT_ROOM_BUTTON_LABEL": "Редактировать комнату",
+        "DELETE_ROOM_BUTTON_LABEL": "Удалить комнату"
+      },
+
+      "PLACEHOLDER": {
+        "PLACEHOLDER_TITLE": "Добавить, Редактировать или Удалить",
+        "PLACEHOLDER_SUBTITLE": "Выберите комнату или рабочее место",
+        "NEW_WORKPLACE_LABEL": "Новое рабочее место"
+      }
+    }
+  },
+
+  "CUSTOMERS": {
+    "PAGE_TITLE": "Клиенты",
+    "NEW_BUTTON_LABEL": "Новый",
+    "GLOBAL_SEARCH_INPUT_PLACEHOLDER": "Поиск по ключевому слову",
+
+    "TABLE_HEADER": {
+      "NAME": "Имя",
+      "EMAIL": "Электронная почта",
+      "PHONE": "Телефон",
+      "CREATED_AT": "Создано",
+      "NR_OF_ORDERS": "Количество заказов"
+    },
+
+    "GLOBAL_SEARCH_PLACEHOLDER": "Записи не найдены.",
+
+    "CUSTOMERS_DIALOG_FORM": {
+      "HEADER_LABEL": "Данные о клиенте",
+      "NAME_LABEL": "Имя",
+      "NAME_REQUIRED_ERROR": "Имя обязательно",
+      "EMAIL_LABEL": "Электронная почта",
+      "EMAIL_REQUIRED_ERROR": "Электронная почта обязательна",
+      "EMAIL_INVALID_ERROR": "Неверный адрес электронной почты",
+      "PHONE_LABEL": "Телефон",
+      "PHONE_REQUIRED_ERROR": "Телефон обязателен",
+      "PHONE_INVALID_ERROR": "Неверный номер телефона",
+      "DIALOG_ACTIONS_CANCEL_BUTTON": "Отмена",
+      "DIALOG_ACTIONS_SAVE_BUTTON": "Сохранить"
+    }
+  },
+
+  "DASHBOARD": {
+    "PAGE_TITLE": "Отчеты",
+
+    "DATA_OPTIONS_DAY": "День",
+    "DATA_OPTIONS_WEEK": "Неделя",
+    "DATA_OPTIONS_MONTH": "Месяц",
+    "DATA_OPTIONS_YEAR": "Год",
+
+    "DASHBOARD_OVERVIEW_ORDERS_CARD_TITLE": "Заказы",
+    "REDIRECT_TO_ORDERS_PAGE_BUTTON_LABEL": "Заказы",
+    "DASHBOARD_OVERVIEW_CUSTOMERS_CARD_TITLE": "Клиенты",
+    "REDIRECT_TO_CUSTOMERS_PAGE_BUTTON_LABEL": "Клиенты",
+    "DASHBOARD_OVERVIEW_REVENUE_CARD_TITLE": "Ежемесячный доход",
+
+    "ORDERS_STATUS_MANAGEMENT_NEW_TITLE": "Новые заказы",
+    "ORDERS_STATUS_MANAGEMENT_CONFIRMED_TITLE": "Подтвержденные заказы",
+    "ORDERS_STATUS_MANAGEMENT_REJECTED_TITLE": "Отклоненные заказы",
+
+    "CUSTOMERS_TABLE": {
+      "TITLE": "Последние клиенты",
+      "REDIRECT_TO_CUSTOMERS": "Просмотреть всех",
+      "NR_OF_ORDERS_CELL_TEXT_ADDITION": "совершенных заказов",
+      "MONEY_SPENT_CELL_TEXT_ADDITION": "потрачено"
+    },
+
+    "ORDERS_CHART": {
+      "TITLE": "Статистика заказов",
+      "CHART_LABEL": "Заказы",
+
+      "CHART_INFO_PERIOD_WEEK": "Последние 7 дней",
+      "CHART_INFO_PERIOD_MONTH": "Последний месяц",
+      "CHART_INFO_PERIOD_YEAR": "Последний год"
+    },
+
+    "ORDERS_TABLE": {
+      "TITLE": "Последние заказы",
+      "REDIRECT_TO_ORDERS": "Просмотреть все",
+      "NR_OF_WORKPLACES_CELL_TEXT_ADDITION": "Комнаты",
+      "TOTAL_CELL_TEXT_ADDITION": "итого",
+      "FROM_DATE_CELL_TEXT_ADDITION": "С",
+      "TO_DATE_CELL_TEXT_ADDITION": "По"
+    },
+
+    "REVENUE_CHART": {
+      "TITLE": "Статистика доходов",
+      "CHART_LABEL": "Доходы",
+
+      "CHART_INFO_PERIOD_WEEK": "Последние 7 дней",
+      "CHART_INFO_PERIOD_MONTH": "Последний месяц",
+      "CHART_INFO_PERIOD_YEAR": "Последний год"
+    },
+
+    "DAYS_OF_WEEK": {
+      "MONDAY": "Понедельник",
+      "TUESDAY": "Вторник",
+      "WEDNESDAY": "Среда",
+      "THURSDAY": "Четверг",
+      "FRIDAY": "Пятница",
+      "SATURDAY": "Суббота",
+      "SUNDAY": "Воскресенье"
+    },
+
+    "MONTHS_OF_YEAR": {
+      "JANUARY": "Январь",
+      "FEBRUARY": "Февраль",
+      "MARCH": "Март",
+      "APRIL": "Апрель",
+      "MAY": "Май",
+      "JUNE": "Июнь",
+      "JULY": "Июль",
+      "AUGUST": "Август",
+      "SEPTEMBER": "Сентябрь",
+      "OCTOBER": "Октябрь",
+      "NOVEMBER": "Ноябрь",
+      "DECEMBER": "Декабрь"
+    }
+  },
+
+  "NOT_FOUND": {
+    "PAGE_TITLE": "Не найдено!",
+    "PAGE_SUBTITLE": "Запрашиваемая страница не существует.",
+    "REDIRECT_TO_DASHBOARD_BUTTON_LABEL": "Вернуться на панель управления"
+  },
+
+  "ORDERS": {
+    "CREATE": {
+      "REDIRECT_TO_ORDERS_PAGE_BUTTON_LABEL": "Заказы",
+      "PAGE_TITLE": "Создать заказ",
+      "USERNAME_LABEL": "Имя пользователя",
+      "USERNAME_PLACEHOLDER": "Выберите клиента",
+      "USERNAME_REQUIRED_ERROR": "Имя пользователя обязательно",
+      "EMAIL_LABEL": "Электронная почта",
+      "EMAIL_REQUIRED_ERROR": "Электронная почта обязательна",
+      "EMAIL_INVALID_ERROR": "Неверный адрес электронной почты",
+      "BOOKED_FROM_LABEL": "Забронировано с",
+      "BOOKED_FROM_PLACEHOLDER": "ДД/ММ/ГГГГ",
+      "BOOKED_FROM_REQUIRED_ERROR": "Дата обязательна",
+      "BOOKED_TO_LABEL": "Забронировано до",
+      "BOOKED_ТО_PLACEHOLDER": "ДД/ММ/ГГГГ",
+      "BOOKED_TO_REQUIRED_ERROR": "Дата обязательна",
+      "BOOKED_TO_SMALLER_THAN_BOOKED_FROM_ERROR": "Дата окончания должна быть после даты начала",
+      "STATUS_LABEL": "Статус",
+      "STATUS_PLACEHOLDER": "Выберите статус",
+      "STATUS_REQUIRED_ERROR": "Статус обязателен",
+      "PAYMENT_STATUS_LABEL": "Статус оплаты",
+      "PAYMENT_STATUS_PLACEHOLDER": "Выберите статус платежа",
+      "PAYMENT_STATUS_REQUIRED_ERROR": "Статус оплаты обязателен",
+      "ADD_WORKPLACE_BUTTON_LABEL": "Добавить рабочее место",
+      "NO_SELECTED_WORKPLACE_ERROR": "Вы должны выбрать рабочие места",
+
+      "SELECTED_WORKPLACES_TABLE": {
+        "ID": "ID",
+        "NAME": "Имя",
+        "DESCRIPTION": "Описание",
+        "BOOKING_PRICE": "Цена бронирования",
+
+        "TOTAL": "Итого"
+      },
+
+      "ADDITIONAL_NOTES_LABEL": "Дополнительные заметки",
+      "ADDITIONAL_NOTES_PLACEHOLDER": "Добавить дополнительные примечания",
+      "CANCEL_BUTTON_LABEL": "Отмена",
+      "CREATE_BUTTON_LABEL": "Создать",
+
+      "WORKPLACES_DIALOG_TABLE": {
+        "HEADER_LABEL": "Детали заказа",
+        "ID": "Id",
+        "NAME": "Имя",
+        "DESCRIPTION": "Описание",
+        "BOOKING_PRICE": "Цена бронирования",
+
+        "ROOM_ID_TEXT_ADDITION": "ID Комнаты:",
+        "CANCEL_BUTTON_LABEL": "Отмена",
+        "ADD_BUTTON_LABEL": "Добавить"
+      }
+    },
+
+    "EDIT": {
+      "REDIRECT_TO_ORDERS_PAGE_BUTTON_LABEL": "Заказы",
+      "PAGE_TITLE": "Заказ",
+
+      "ORDER_DETAILS_CARD": {
+        "HEADER": "Детали заказа",
+        "EDIT_BUTTON_LABEL": "Редактировать",
+        "CUSTOMER_LABEL": "Клиент",
+        "EMAIL_LABEL": "Электронная почта",
+        "PHONE_LABEL": "Телефон",
+        "ORDER_STATUS_LABEL": "Статус заказа",
+        "BOOKED_FROM_LABEL": "Забронировано с",
+        "BOOKED_TO_LABEL": "Забронировано до",
+        "PAYMENT_STATUS_LABEL": "Статус оплаты"
+      },
+
+      "ORDER_ITEMS_CARD": {
+        "HEADER": "Товары заказа",
+
+        "ORDERS_TABLE": {
+          "ID": "Id",
+          "NAME": "Имя",
+          "DESCRIPTION": "Описание",
+          "BOOKING_PRICE": "Цена бронирования",
+          "SUBTOTAL": "Подытог",
+          "DISCOUNT": "Скидка",
+          "TOTAL": "Итого"
+        }
+      },
+
+      "QUICK_ACTIONS_CARD": {
+        "HEADER": "Быстрые действия",
+        "SAVE_CHANGES_BUTTON_LABEL": "Сохранить изменения",
+        "SELECT_STATUS_PLACEHOLDER": "Выберите статус",
+        "LAST_UPDATED_TEXT_ADDITION": "Обновлено",
+
+        "STEPPER": {
+          "PLACED_AT_LABEL": "Размещено в",
+          "PROCESSED_LABEL": "Обработано",
+          "COMPLETE_LABEL": "Завершено"
+        },
+
+        "MARK_AS_PAID_BUTTON_LABEL": "Отметить как оплаченный",
+        "DELETE_ORDER_BUTTON_LABEL": "Удалить заказ"
+      },
+
+      "EDIT_ORDER_DETAILS_DIALOG_FORM": {
+        "CUSTOMER_LABEL": "Клиент",
+        "CUSTOMER_PLACEHOLDER": "Выберите клиента",
+        "CUSTOMER_REQUIRED_ERROR": "Клиент обязателен",
+        "EMAIL_LABEL": "Электронная почта",
+        "EMAIL_REQUIRED_ERROR": "Электронная почта обязательна",
+        "EMAIL_INVALID_ERROR": "Неверный адрес электронной почты",
+        "PHONE_LABEL": "Телефон",
+        "PHONE_REQUIRED_ERROR": "Телефон обязателен",
+        "PHONE_INVALID_ERROR": "Неверный номер телефона",
+        "BOOKED_FROM_LABEL": "Забронировано с",
+        "BOOKED_FROM_PLACEHOLDER": "ДД/ММ/ГГГГ",
+        "BOOKED_FROM_REQUIRED_ERROR": "Дата обязательна",
+        "BOOKED_TO_LABEL": "Забронировано до",
+        "BOOKED_ТО_PLACEHOLDER": "ДД/ММ/ГГГГ",
+        "BOOKED_TO_REQUIRED_ERROR": "Дата обязательна",
+        "BOOKED_TO_SMALLER_THAN_BOOKED_FROM_ERROR": "Дата окончания должна быть после даты начала",
+        "STATUS_LABEL": "Статус",
+        "STATUS_PLACEHOLDER": "Выберите статус",
+        "STATUS_REQUIRED_ERROR": "Статус обязателен",
+        "PAYMENT_STATUS_LABEL": "Статус оплаты",
+        "PAYMENT_STATUS_Placeholder": "Выберите статус платежа",
+        "PAYMENT_STATUS_REQUIRED_ERROR": "Статус оплаты обязателен",
+        "DIALOG_ACTIONS_CANCEL_BUTTON": "Отмена",
+        "DIALOG_ACTIONS_SAVE_BUTTON": "Сохранить изменения"
+      }
+    },
+
+    "VIEW": {
+      "PAGE_TITLE": "Заказы",
+      "NEW_BUTTON_LABEL": "Новый",
+      "GLOBAL_SEARCH_INPUT_PLACEHOLDER": "Ключевое слово поиска",
+
+      "TABLE_HEADER": {
+        "ID": "Id",
+        "CREATED_AT": "Создано",
+        "USERNAME": "Имя пользователя",
+        "BOOKED_FROM": "Забронировано с",
+        "BOOKED_TO": "Забронировано до",
+        "NUMBER_OF_WORKPLACES": "Кол. рабочих мест",
+        "TOTAL": "Итого",
+        "STATUS": "Статус"
+      },
+
+      "FILTER_STATUS_PLACEHOLDER": "Выберите статус",
+
+      "GLOBAL_SEARCH_PLACEHOLDER": "Записи не найдены.",
+
+      "ORDERS_OVERVIEW": {
+        "TITLE": "Итоговый чистый доход",
+        "FOOTER_LEFT": "Из общего количества",
+        "FOOTER_RIGHT": "Заказы",
+
+        "CHART_LABEL_PAID": "Оплачено",
+        "CHART_LABEL_NOT_PAID": "Не оплачено"
+      }
+    }
+  },
+
+  "SETTINGS": {
+    "USER_SETTINGS": {
+      "SECTION_TITLE": "Настройки аккаунта",
+      "CHANGE_USER_AVATAR_BUTTON_LABEL": "Изменить",
+      "DELETE_USER_AVATAR_BUTTON_LABEL": "Удалить",
+      "USERNAME_LABEL": "Имя пользователя",
+      "USERNAME_REQUIRED_ERROR": "Имя пользователя обязательно",
+      "EMAIL_LABEL": "Адрес электронной почты",
+      "EMAIL_REQUIRED_ERROR": "Электронная почта обязательна",
+      "EMAIL_INVALID_ERROR": "Неверный адрес электронной почты",
+      "SAVE_BUTTON_LABEL": "Сохранить изменения"
+    },
+
+    "PASSWORD_SETTINGS": {
+      "SECTION_TITLE": "Сменить пароль",
+      "CURRENT_PASSWORD_LABEL": "Текущий пароль",
+      "CURRENT_PASSWORD_REQUIRED_ERROR": "Текущий пароль обязателен",
+      "NEW_PASSWORD_LABEL": "Новый пароль",
+      "NEW_PASSWORD_REQUIRED_ERROR": "Новый пароль обязателен",
+      "NEW_PASSWORD_MATCH_ERROR": "Новый пароль должен отличаться от старого",
+      "CONFIRM_PASSWORD_LABEL": "Подтверждение пароля",
+      "CONFIRM_PASSWORD_REQUIRED_ERROR": "Подтверждение пароля обязательно",
+      "CONFIRM_PASSWORD_MISMATCH": "Пароли не совпадают",
+      "CHANGE_PASSWORD_BUTTON_LABEL": "Сменить пароль"
+    }
+  }
+}

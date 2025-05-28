@@ -1,0 +1,338 @@
+<section>
+  <button
+    pButton
+    pRipple
+    class="return-button"
+    [text]="true"
+    [plain]="true"
+    (click)="navigateToOrders()"
+  >
+    <span class="pi pi-arrow-left"> </span>
+    <span>{{
+      'ORDERS.CREATE.REDIRECT_TO_ORDERS_PAGE_BUTTON_LABEL' | translate
+    }}</span>
+  </button>
+
+  <div class="header">
+    <span class="header-title">
+      {{ 'ORDERS.CREATE.PAGE_TITLE' | translate }}
+    </span>
+  </div>
+
+  <div class="card-wrapper">
+    <div class="card-wrapper-left">
+      <p-card class="card">
+        <div class="order-form" [formGroup]="orderForm">
+          <div class="field-aligner">
+            <div class="field">
+              <label for="username">
+                {{ 'ORDERS.CREATE.USERNAME_LABEL' | translate }}
+              </label>
+              <p-dropdown
+                [options]="customerOptions"
+                formControlName="username"
+                optionLabel="label"
+                placeholder=" {{ 'ORDERS.CREATE.USERNAME_PLACEHOLDER' | translate}}"
+                required
+                id="username"
+                [filter]="true"
+                filterBy="label"
+                [ngClass]="{
+                  'ng-invalid ng-dirty':
+                    orderForm.get('username')?.touched &&
+                    orderForm.get('username')?.invalid
+                }"
+              />
+              @if(orderForm.get('username')?.touched &&
+              orderForm.get('username')?.getError('required')){
+              <small class="p-error">
+                {{ 'ORDERS.CREATE.USERNAME_REQUIRED_ERROR' | translate }}
+              </small>
+              }
+            </div>
+
+            <div class="field">
+              <label for="email">
+                {{ 'ORDERS.CREATE.EMAIL_LABEL' | translate }}
+              </label>
+              <input
+                type="text"
+                pInputText
+                id="email"
+                required
+                formControlName="email"
+                placeholder="example@gmail.com"
+                [ngClass]="{
+                  'ng-invalid ng-dirty':
+                    orderForm.get('email')?.touched &&
+                    orderForm.get('email')?.invalid
+                }"
+              />
+              @if(orderForm.get('email')?.touched &&
+              orderForm.get('email')?.getError('required')){
+              <small class="p-error">
+                {{ 'ORDERS.CREATE.EMAIL_REQUIRED_ERROR' | translate }}
+              </small>
+              } @if(orderForm.get('email')?.touched &&
+              orderForm.get('email')?.getError('email')){
+              <small class="p-error">
+                {{ 'ORDERS.CREATE.EMAIL_INVALID_ERROR' | translate }}</small
+              >
+              }
+            </div>
+
+            <div class="field">
+              <label for="booked_from">
+                {{ 'ORDERS.CREATE.BOOKED_FROM_LABEL' | translate }}</label
+              >
+              <p-calendar
+                required
+                id="booked_from"
+                formControlName="booked_from"
+                appendTo="body"
+                [showIcon]="true"
+                placeholder="{{ 'ORDERS.CREATE.BOOKED_FROM_PLACEHOLDER' | translate}}"
+                [ngClass]="{
+                  'ng-invalid ng-dirty':
+                    orderForm.get('booked_from')?.touched &&
+                    orderForm.get('booked_from')?.invalid
+                }"
+              />
+              @if(orderForm.get('booked_from')?.touched &&
+              orderForm.get('booked_from')?.getError('required')){
+              <small class="p-error">
+                {{ 'ORDERS.CREATE.BOOKED_FROM_REQUIRED_ERROR' | translate }}
+              </small>
+              }
+            </div>
+
+            <div class="field">
+              <label for="booked_to">
+                {{ 'ORDERS.CREATE.BOOKED_TO_LABEL' | translate }}
+              </label>
+              <p-calendar
+                required
+                id="booked_to"
+                formControlName="booked_to"
+                appendTo="body"
+                [showIcon]="true"
+                placeholder="{{ 'ORDERS.CREATE.BOOKED_ТО_PLACEHOLDER' | translate}}"
+                [ngClass]="{
+                  'ng-invalid ng-dirty':
+                    orderForm.get('booked_to')?.touched &&
+                    orderForm.get('booked_to')?.invalid
+                }"
+              />
+              @if(orderForm.get('booked_to')?.touched &&
+              orderForm.get('booked_to')?.getError('required')){
+              <small class="p-error">
+                {{ 'ORDERS.CREATE.BOOKED_TO_REQUIRED_ERROR' | translate }}
+              </small>
+              } @if(orderForm.get('booked_to')?.touched &&
+              orderForm.get('booked_to')?.hasError('incorrect')){
+              <small class="p-error"
+                >{{
+                  'ORDERS.CREATE.BOOKED_TO_SMALLER_THAN_BOOKED_FROM_ERROR'
+                    | translate
+                }}
+              </small>
+              }
+            </div>
+
+            <div class="field">
+              <label for="status">
+                {{ 'ORDERS.CREATE.STATUS_LABEL' | translate }}
+              </label>
+              <p-dropdown
+                [options]="statusOptions"
+                formControlName="status"
+                optionLabel="label"
+                placeholder="{{ 'ORDERS.CREATE.STATUS_PLACEHOLDER' | translate}}"
+                required
+                id="status"
+                [ngClass]="{
+                  'ng-invalid ng-dirty':
+                    orderForm.get('status')?.touched &&
+                    orderForm.get('status')?.invalid
+                }"
+                ><ng-template let-option pTemplate="item">
+                  <p-tag
+                    [value]="option.label"
+                    [severity]="getSeverity(option.value)"
+                  /> </ng-template
+              ></p-dropdown>
+              @if(orderForm.get('status')?.touched &&
+              orderForm.get('status')?.getError('required')){
+              <small class="p-error">
+                {{ 'ORDERS.CREATE.STATUS_REQUIRED_ERROR' | translate }}
+              </small>
+              }
+            </div>
+
+            <div class="field">
+              <label for="payment_status">
+                {{ 'ORDERS.CREATE.PAYMENT_STATUS_LABEL' | translate }}
+              </label>
+              <p-dropdown
+                [options]="paymentStatusOptions"
+                formControlName="payment_status"
+                optionLabel="label"
+                placeholder="{{ 'ORDERS.CREATE.PAYMENT_STATUS_PLACEHOLDER' | translate}}"
+                required
+                id="payment_status"
+                [ngClass]="{
+                  'ng-invalid ng-dirty':
+                    orderForm.get('payment_status')?.touched &&
+                    orderForm.get('payment_status')?.invalid
+                }"
+                ><ng-template let-option pTemplate="item">
+                  <span>{{ option.label }}</span>
+                </ng-template></p-dropdown
+              >
+              @if(orderForm.get('payment_status')?.touched &&
+              orderForm.get('payment_status')?.getError('required')){
+              <small class="p-error">
+                {{ 'ORDERS.CREATE.PAYMENT_STATUS_REQUIRED_ERROR' | translate }}
+              </small>
+              }
+            </div>
+          </div>
+
+          <p-divider />
+
+          <div class="add-workplaces">
+            <button
+              pButton
+              pRipple
+              type="button"
+              class="icon-button"
+              [text]="true"
+              severity="success"
+              (click)="addWorkplaces()"
+            >
+              <span class="pi pi-plus"></span>
+              <span>{{
+                'ORDERS.CREATE.ADD_WORKPLACE_BUTTON_LABEL' | translate
+              }}</span>
+            </button>
+
+            @if (!workplaces && submited){
+            <div class="p-error">
+              {{ 'ORDERS.CREATE.NO_SELECTED_WORKPLACE_ERROR' | translate }}
+            </div>
+            }
+          </div>
+
+          @if(workplaces){
+          <p-table [value]="workplaces" [tableStyle]="{ width: '100%' }">
+            <ng-template pTemplate="header">
+              <tr>
+                <th>
+                  {{ 'ORDERS.CREATE.SELECTED_WORKPLACES_TABLE.ID' | translate }}
+                </th>
+                <th>
+                  {{
+                    'ORDERS.CREATE.SELECTED_WORKPLACES_TABLE.NAME' | translate
+                  }}
+                </th>
+                <th>
+                  {{
+                    'ORDERS.CREATE.SELECTED_WORKPLACES_TABLE.DESCRIPTION'
+                      | translate
+                  }}
+                </th>
+                <th>
+                  {{
+                    'ORDERS.CREATE.SELECTED_WORKPLACES_TABLE.BOOKING_PRICE'
+                      | translate
+                  }}
+                </th>
+                <th style="width: 5%"></th>
+              </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-workplace>
+              <tr>
+                <td>{{ workplace.id }}</td>
+                <td>{{ workplace.name_en }}</td>
+                <td>{{ workplace.description_en }}</td>
+                <td>{{ workplace.booking_price | mdlCurrency }}</td>
+                <td>
+                  <button
+                    pButton
+                    pRipple
+                    type="button"
+                    icon="pi pi-trash"
+                    (click)="deleteWorkplace(workplace)"
+                    class="p-button-rounded p-button-text p-button-danger"
+                  ></button>
+                </td>
+              </tr>
+            </ng-template>
+            <ng-template pTemplate="summary">
+              <div class="table-footer">
+                <div>
+                  <span
+                    >{{
+                      'ORDERS.CREATE.SELECTED_WORKPLACES_TABLE.TOTAL'
+                        | translate
+                    }}
+                  </span>
+                  <span>{{ total | mdlCurrency }}</span>
+                </div>
+              </div>
+            </ng-template>
+          </p-table>
+          }
+
+          <div class="field">
+            <label for="notes">{{
+              'ORDERS.CREATE.ADDITIONAL_NOTES_LABEL' | translate
+            }}</label>
+            <textarea
+              formControlName="notes"
+              rows="5"
+              [autoResize]="true"
+              pInputTextarea
+              placeholder="{{ 'ORDERS.CREATE.ADDITIONAL_NOTES_PLACEHOLDER' | translate}}"
+              id="notes"
+            >
+            </textarea>
+          </div>
+        </div>
+
+        <div class="form-action-buttons">
+          <button
+            pButton
+            pRipple
+            type="button"
+            class="icon-button"
+            severity="danger"
+            [text]="true"
+            (click)="cancelOrder()"
+          >
+            <span class="pi pi-times"></span>
+            <span>{{ 'ORDERS.CREATE.CANCEL_BUTTON_LABEL' | translate }}</span>
+          </button>
+
+          <button
+            pButton
+            pRipple
+            type="button"
+            class="icon-button"
+            severity="success"
+            [text]="true"
+            (click)="createOrder()"
+          >
+            <span class="pi pi-check"></span>
+            <span>{{ 'ORDERS.CREATE.CREATE_BUTTON_LABEL' | translate }}</span>
+          </button>
+        </div>
+      </p-card>
+    </div>
+  </div>
+</section>
+
+<app-dialog
+  [workplaceDialog]="workplaceDialog"
+  (changeDialogState)="handleState($event)"
+></app-dialog>

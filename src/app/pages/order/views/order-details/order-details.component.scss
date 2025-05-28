@@ -1,0 +1,199 @@
+:host ::ng-deep {
+  .p-card-body {
+    padding: 0;
+  }
+
+  .p-dropdown {
+    width: 100%;
+  }
+
+  .p-datatable-footer {
+    padding: 0;
+  }
+
+  .p-tag {
+    width: 0.7rem;
+    height: 0.7rem;
+    border-radius: 50%;
+    padding: 0;
+    margin: 0;
+  }
+
+  p-tag.p-element {
+    display: flex;
+    align-items: center;
+  }
+}
+
+section {
+  margin: 1rem 0;
+
+  .return-button {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+
+    .header-title {
+      font-weight: 600;
+      font-size: 1.5em;
+    }
+  }
+
+  .card-wrapper {
+    display: flex;
+    gap: 1.5rem;
+    width: 100%;
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 1rem;
+
+      .card-header-title {
+        padding: 1rem 0;
+      }
+    }
+
+    .card-body {
+      padding: 1rem;
+
+      .total-price-data {
+        display: flex;
+        gap: 1rem;
+        justify-content: space-between;
+        padding: 1rem 7% 1rem 1rem;
+        //width: 100%;
+      }
+    }
+
+    .card-wrapper-left {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      width: 70%;
+
+      .order-details-card {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        .order-details-wrapper {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 1.5rem;
+
+          .order-details {
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+
+            .order-details-title {
+              font-weight: 600;
+              font-size: 1.2rem;
+            }
+
+            .order-details-customer-data {
+              color: rgb(151, 161, 186);
+              font-size: 0.875rem;
+            }
+          }
+        }
+      }
+    }
+
+    .actions-card {
+      width: 30%;
+
+      .card-body {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        .dropdown-item {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+        }
+
+        .save-button {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+        }
+
+        .custom-stepper {
+          display: flex;
+          flex-direction: column;
+          justify-content: start;
+          gap: 0.7rem;
+          padding: 0 1.5rem;
+
+          .custom-stepper-item {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+
+            .custom-stepper-icon {
+              background: #8690a3;
+              font-size: 1.2rem;
+              padding: 0.6rem;
+              border-radius: 50%;
+            }
+
+            .done {
+              background: #388e3c;
+              color: #fff;
+            }
+
+            .custom-stepper-item-details {
+              text-transform: uppercase;
+            }
+          }
+
+          hr {
+            border: none;
+            border-left: 2px solid #8690a3;
+            height: 30px;
+            width: 0px;
+            margin: 0 1.2rem;
+          }
+        }
+      }
+      .card-footer {
+        padding: 1rem 0 0 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.2rem;
+
+        .card-footer-item {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          width: fit-content;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  section {
+    .card-wrapper {
+      flex-direction: column;
+
+      .card-wrapper-left {
+        width: 100%;
+      }
+
+      .actions-card {
+        width: 100%;
+      }
+    }
+  }
+}

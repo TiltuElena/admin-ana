@@ -1,0 +1,23 @@
+:host::ng-deep {
+  .p-toast-top-right {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .p-toast-message-content {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  .p-toast-message-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    .p-toast-summary {
+      font-size: 1.1rem;
+    }
+  }
+}

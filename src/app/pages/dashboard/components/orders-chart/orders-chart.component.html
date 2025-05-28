@@ -1,0 +1,40 @@
+<p-card>
+  <div class="chart-card-header">
+    <span>{{ 'DASHBOARD.ORDERS_CHART.TITLE' | translate }}</span>
+    <div class="menu-wrapper">
+      <p-menu
+        #menu
+        [model]="options"
+        [popup]="true"
+        [styleClass]="'custom-menu'"
+      >
+        <ng-template pTemplate="option" let-option>
+          <span class="ml-2">{{ option.label }}</span>
+        </ng-template>
+      </p-menu>
+
+      <button
+        pButton
+        class="chart-menu"
+        [text]="true"
+        [plain]="true"
+        (click)="menu.toggle($event)"
+      >
+        <span> {{ selectedOption }}</span>
+        <span class="pi pi-angle-down"></span>
+      </button>
+    </div>
+  </div>
+
+  <div class="chart">
+    <canvas
+      baseChart
+      [data]="lineChartData"
+      [options]="lineChartOptions"
+      [legend]="lineChartLegend"
+      [type]="lineChartType"
+      [plugins]="hoverLinePlugin"
+    >
+    </canvas>
+  </div>
+</p-card>

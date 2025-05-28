@@ -1,0 +1,26 @@
+.container {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  grid-template-columns: auto 1fr;
+  grid-template-areas:
+    'header header'
+    'sidebar body';
+  height: 100vh;
+  overflow: hidden;
+
+  app-header {
+    grid-area: header;
+  }
+
+  app-sidebar {
+    grid-area: sidebar;
+    height: 100%;
+    overflow-y: auto;
+  }
+
+  app-body {
+    grid-area: body;
+    height: 100%;
+    overflow-y: auto;
+  }
+}

@@ -1,0 +1,88 @@
+:host ::ng-deep {
+  .p-icon-field-left .p-input-icon:first-of-type {
+    position: absolute;
+    top: 0;
+  }
+
+  .p-dialog {
+    width: 30rem;
+  }
+
+  .p-dialog-header-icons {
+    //background: red;
+
+    .p-button {
+      border-radius: 0.5rem;
+    }
+  }
+
+  .p-button.p-button-icon-only {
+    border-radius: 50%;
+  }
+
+  .p-avatar {
+    width: 8rem;
+    height: 8rem;
+  }
+
+  .p-chip {
+    margin: 0.2rem;
+
+    .p-chip-icon {
+      margin-right: 0.2rem;
+    }
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.page-header {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.card {
+  width: 100%;
+  margin: 2rem 0;
+
+  .table-caption {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+
+    .icon-button {
+      display: flex;
+      gap: 0.5rem;
+      padding: 0 1rem;
+    }
+  }
+
+  .table-header {
+    display: flex;
+    align-items: center;
+
+    .sort-icon-wrapper {
+      padding: 0.4rem 0.8rem 0.6rem 0.8rem;
+    }
+  }
+
+  .button-wrapper {
+    display: flex;
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .card {
+    .table-caption {
+      flex-direction: column;
+
+      .new-button {
+        padding: 1rem;
+        width: 7rem;
+      }
+    }
+  }
+}

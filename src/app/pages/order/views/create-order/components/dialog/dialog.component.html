@@ -1,0 +1,125 @@
+<p-dialog
+  [(visible)]="workplaceDialog"
+  header="{{ 'ORDERS.CREATE.WORKPLACES_DIALOG_TABLE.HEADER_LABEL' | translate }}"
+  [modal]="true"
+  [draggable]="false"
+  (onHide)="onDialogHide()"
+  [dismissableMask]="true"
+>
+  <ng-template pTemplate="content">
+    <div class="card">
+      <p-table
+        [value]="roomsWithWorkplaces"
+        [(selection)]="selectedWorkplaces"
+        rowGroupMode="subheader"
+        groupRowsBy="id"
+        [scrollable]="true"
+        scrollHeight="500px"
+        [tableStyle]="{ width: '100%' }"
+      >
+        <ng-template pTemplate="header">
+          <tr>
+            <th></th>
+            <th>
+              {{ 'ORDERS.CREATE.WORKPLACES_DIALOG_TABLE.ID' | translate }}
+            </th>
+            <th>
+              {{ 'ORDERS.CREATE.WORKPLACES_DIALOG_TABLE.NAME' | translate }}
+            </th>
+            <th>
+              {{
+                'ORDERS.CREATE.WORKPLACES_DIALOG_TABLE.DESCRIPTION' | translate
+              }}
+            </th>
+            <th>
+              {{
+                'ORDERS.CREATE.WORKPLACES_DIALOG_TABLE.BOOKING_PRICE'
+                  | translate
+              }}
+            </th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="groupheader" let-room>
+          <tr pRowGroupHeader>
+            <td colspan="5">
+              <div class="room-header">
+                <p-checkbox
+                  (onChange)="toggleRoomSelection(room)"
+                  [binary]="true"
+                  [ngModel]="isRoomSelected(room)"
+                  [disabled]="areAllWorkplacesDisabled(room)"
+                />
+                <span
+                  >{{
+                    'ORDERS.CREATE.WORKPLACES_DIALOG_TABLE.ROOM_ID_TEXT_ADDITION'
+                      | translate
+                  }}
+                  {{ room.id }}</span
+                >
+              </div>
+            </td>
+          </tr>
+        </ng-template>
+        <!--        <ng-template pTemplate="groupfooter" let-room>-->
+        <!--          <tr>-->
+        <!--            <td colspan="5">Total Workplaces: {{ room.workplaces.length }}</td>-->
+        <!--          </tr>-->
+        <!--        </ng-template>-->
+        <ng-template pTemplate="body" let-room let-rowIndex="rowIndex">
+          @for(workplace of room.workplaces; track workplace){
+          <tr>
+            <td>
+              <p-tableCheckbox
+                [value]="workplace"
+                [index]="rowIndex"
+                [disabled]="isOutOfStock(workplace)"
+              >
+              </p-tableCheckbox>
+            </td>
+            <td>{{ workplace.id }}</td>
+            <td>{{ workplace.name_en }}</td>
+            <td>{{ workplace.description_en }}</td>
+            <td>{{ workplace.booking_price | mdlCurrency }}</td>
+          </tr>
+          }
+        </ng-template>
+      </p-table>
+    </div>
+  </ng-template>
+  <ng-template pTemplate="footer">
+    <div class="dialog-action-buttons">
+      <button
+        pButton
+        pRipple
+        type="button"
+        class="icon-button"
+        severity="danger"
+        [text]="true"
+        (click)="hideDialog()"
+      >
+        <span class="pi pi-times"></span>
+        <span>{{
+          'ORDERS.CREATE.WORKPLACES_DIALOG_TABLE.CANCEL_BUTTON_LABEL'
+            | translate
+        }}</span>
+      </button>
+
+      <button
+        pButton
+        pRipple
+        type="button"
+        class="icon-button"
+        severity="success"
+        [text]="true"
+        (click)="addWorkplaces()"
+      >
+        <span class="pi pi-check"></span>
+        <span>{{
+          'ORDERS.CREATE.WORKPLACES_DIALOG_TABLE.ADD_BUTTON_LABEL' | translate
+        }}</span>
+      </button>
+    </div>
+  </ng-template>
+</p-dialog>
+
+<p-confirmDialog />

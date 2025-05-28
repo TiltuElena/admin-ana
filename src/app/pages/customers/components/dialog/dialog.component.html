@@ -1,0 +1,162 @@
+<p-dialog
+  [(visible)]="customerDialog"
+  header="{{'CUSTOMERS.CUSTOMERS_DIALOG_FORM.HEADER_LABEL' | translate}}"
+  [modal]="true"
+  [draggable]="false"
+  (onHide)="onDialogHide()"
+  [dismissableMask]="true"
+>
+  <ng-template pTemplate="content">
+    <div class="customer-form" [formGroup]="customerForm">
+      <div class="avatar-picker">
+        <p-avatar [image]="avatarImage" shape="circle"></p-avatar>
+        <input
+          type="file"
+          accept="image/*"
+          (change)="onFileSelect($event)"
+          style="display: none"
+          #fileInput
+        />
+        <button
+          pButton
+          class="file-picker-button"
+          (click)="fileInput.click()"
+          icon="pi pi-pencil"
+          severity="success"
+        ></button>
+      </div>
+      <div class="field">
+        <label for="name">
+          {{ 'CUSTOMERS.CUSTOMERS_DIALOG_FORM.NAME_LABEL' | translate }}
+        </label>
+        <input
+          type="text"
+          pInputText
+          id="name"
+          formControlName="name"
+          autofocus
+          required
+          [ngClass]="{
+            'ng-invalid ng-dirty':
+              customerForm.get('name')?.touched &&
+              customerForm.get('name')?.invalid
+          }"
+        />
+        @if(customerForm.get('name')?.hasError('required') &&
+        customerForm.get('name')?.touched){
+        <small class="p-error">
+          {{
+            'CUSTOMERS.CUSTOMERS_DIALOG_FORM.NAME_REQUIRED_ERROR' | translate
+          }}
+        </small>
+        }
+      </div>
+
+      <div class="field">
+        <label for="email">
+          {{ 'CUSTOMERS.CUSTOMERS_DIALOG_FORM.EMAIL_LABEL' | translate }}
+        </label>
+        <input
+          type="text"
+          pInputText
+          id="email"
+          formControlName="email"
+          required
+          [ngClass]="{
+            'ng-invalid ng-dirty':
+              customerForm.get('email')?.touched &&
+              customerForm.get('email')?.invalid
+          }"
+        />
+        @if(customerForm.get('email')?.hasError('required') &&
+        customerForm.get('email')?.touched){
+        <small class="p-error">
+          {{
+            'CUSTOMERS.CUSTOMERS_DIALOG_FORM.EMAIL_REQUIRED_ERROR' | translate
+          }}</small
+        >
+        } @else if (customerForm.get('email')?.hasError('email') &&
+        customerForm.get('email')?.touched){
+        <small class="p-error">
+          {{
+            'CUSTOMERS.CUSTOMERS_DIALOG_FORM.EMAIL_INVALID_ERROR' | translate
+          }}
+        </small>
+        }
+      </div>
+
+      <div class="field">
+        <label for="phone">
+          {{ 'CUSTOMERS.CUSTOMERS_DIALOG_FORM.PHONE_LABEL' | translate }}
+        </label>
+        <input
+          id="phone"
+          pInputText
+          formControlName="phone"
+          required
+          [ngClass]="{
+            'ng-invalid ng-dirty':
+              customerForm.get('phone')?.touched &&
+              customerForm.get('phone')?.invalid
+          }"
+        />
+        @if(customerForm.get('phone')?.hasError('required') &&
+        customerForm.get('phone')?.touched){
+        <small class="p-error">
+          {{
+            'CUSTOMERS.CUSTOMERS_DIALOG_FORM.PHONE_REQUIRED_ERROR' | translate
+          }}
+        </small>
+        } @else if (customerForm.get('phone')?.hasError('pattern') &&
+        customerForm.get('phone')?.touched){
+        <small class="p-error">
+          {{
+            'CUSTOMERS.CUSTOMERS_DIALOG_FORM.PHONE_INVALID_ERROR' | translate
+          }}
+        </small>
+        }
+      </div>
+    </div>
+  </ng-template>
+
+  <ng-template pTemplate="footer">
+    <div class="dialog-action-buttons">
+      <button
+        pButton
+        pRipple
+        type="button"
+        class="icon-button"
+        severity="danger"
+        [text]="true"
+        (click)="hideDialog()"
+      >
+        <span class="pi pi-times"></span>
+        <span>
+          {{
+            'CUSTOMERS.CUSTOMERS_DIALOG_FORM.DIALOG_ACTIONS_CANCEL_BUTTON'
+              | translate
+          }}</span
+        >
+      </button>
+      <button
+        pButton
+        pRipple
+        type="button"
+        class="icon-button"
+        severity="success"
+        [text]="true"
+        (click)="saveCustomer()"
+      >
+        <span class="pi pi-check"></span>
+        <span>
+          {{
+            'CUSTOMERS.CUSTOMERS_DIALOG_FORM.DIALOG_ACTIONS_SAVE_BUTTON'
+              | translate
+          }}</span
+        >
+      </button>
+    </div>
+  </ng-template>
+</p-dialog>
+
+<p-confirmDialog [style]="{ 'max-width': '450px' }" />

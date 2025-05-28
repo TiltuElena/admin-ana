@@ -1,0 +1,377 @@
+{
+  "LOGIN": {
+    "FORM_TITLE": "Login",
+    "REDIRECT_TO_REGISTER": "Sign Up",
+    "EMAIL_LABEL": "Email address",
+    "EMAIL_REQUIRED_ERROR": "Email is required",
+    "EMAIL_INVALID_ERROR": "Invalid email",
+    "PASSWORD_LABEL": "Password",
+    "PASSWORD_REQUIRED_ERROR": "Password is required",
+    "SUBMIT_BUTTON_TITLE": "Login"
+  },
+
+  "REGISTER": {
+    "FORM_TITLE": "Register",
+    "REDIRECT_TO_LOGIN": "Sign In",
+    "USERNAME_LABEL": "Username",
+    "USERNAME_REQUIRED_ERROR": "Username is required",
+    "EMAIL_LABEL": "Email address",
+    "EMAIL_REQUIRED_ERROR": "Email is required",
+    "EMAIL_INVALID_ERROR": "Invalid email",
+    "PASSWORD_LABEL": "Password",
+    "PASSWORD_REQUIRED_ERROR": "Password is required",
+    "CONFIRM_PASSWORD_LABEL": "Confirm password",
+    "CONFIRM_PASSWORD_REQUIRED_ERROR": "Confirm Password is required",
+    "PASSWORD_MISMATCH_ERROR": "Passwords do not match",
+    "SUBMIT_BUTTON_TITLE": "Register"
+  },
+
+  "BOOKING": {
+    "PAGE_TITLE": "Booking Schema Editor",
+
+    "SCHEMA_EDITOR": {
+      "WORKPLACE_EDITOR": {
+        "WORKPLACE_EDITOR_TITLE": "Workplace Editor",
+        "NAME_LABEL": "Name",
+        "NAME_REQUIRED_ERROR": "Name is required",
+        "DESCRIPTION_LABEL": "Description",
+        "DESCRIPTION_REQUIRED_ERROR": "Description is required",
+        "POSITION_X_LABEL": "Position X",
+        "POSITION_X_REQUIRED_ERROR": "Position X is required",
+        "POSITION_Y_LABEL": "Position Y",
+        "POSITION_Y_REQUIRED_ERROR": "Position Y is required",
+        "BOOKING_PRICE_LABEL": "Booking price",
+        "BOOKING_PRICE_REQUIRED_ERROR": "Booking price is required",
+        "ROOM_ID_LABEL": "Room Id",
+        "ROOM_ID_REQUIRED_ERROR": "Room Id is required",
+        "EDIT_WORKPLACE_BUTTON_LABEL": "Edit Workplace",
+        "DELETE_WORKPLACE_BUTTON_LABEL": "Delete Workplace",
+        "CREATE_WORKPLACE_BUTTON_LABEL": "Create Workplace"
+      },
+
+      "ROOM_EDITOR": {
+        "ROOM_EDITOR_TITLE": "Room Editor",
+        "NAME_LABEL": "Name",
+        "NAME_REQUIRED_ERROR": "Name is required",
+        "DESCRIPTION_LABEL": "Description",
+        "DESCRIPTION_REQUIRED_ERROR": "Description is required",
+        "AREA_LABEL": "Area",
+        "AREA_REQUIRED_ERROR": "Area is required",
+        "LENGTH_LABEL": "Length",
+        "LENGTH_REQUIRED_ERROR": "Length is required",
+        "WIDTH_LABEL": "Width",
+        "WIDTH_REQUIRED_ERROR": "Width is required",
+        "FLOOR_NUMBER_LABEL": "Floor Number",
+        "FLOOR_NUMBER_PLACEHOLDER": "Select a floor",
+        "FLOOR_NUMBER_ERROR": "Floor number is required",
+        "EDIT_ROOM_BUTTON_LABEL": "Edit Room",
+        "DELETE_ROOM_BUTTON_LABEL": "Delete Room"
+      },
+
+      "PLACEHOLDER": {
+        "PLACEHOLDER_TITLE": "Add, Edit or Delete",
+        "PLACEHOLDER_SUBTITLE": "Choose a room or workplace",
+        "NEW_WORKPLACE_LABEL": "New Workplace"
+      }
+    }
+  },
+
+  "CUSTOMERS": {
+    "PAGE_TITLE": "Customers",
+    "NEW_BUTTON_LABEL": "New",
+    "GLOBAL_SEARCH_INPUT_PLACEHOLDER": "Search keyword",
+
+    "TABLE_HEADER": {
+      "NAME": "Name",
+      "EMAIL": "Email",
+      "PHONE": "Phone",
+      "CREATED_AT": "Created At",
+      "NR_OF_ORDERS": "Nr. of orders"
+    },
+
+    "GLOBAL_SEARCH_PLACEHOLDER": "No entries found.",
+
+    "CUSTOMERS_DIALOG_FORM": {
+      "HEADER_LABEL": "Customer Details",
+      "NAME_LABEL": "Name",
+      "NAME_REQUIRED_ERROR": "Name is required",
+      "EMAIL_LABEL": "Email",
+      "EMAIL_REQUIRED_ERROR": "Email is required",
+      "EMAIL_INVALID_ERROR": "Invalid email",
+      "PHONE_LABEL": "Phone",
+      "PHONE_REQUIRED_ERROR": "Phone is required",
+      "PHONE_INVALID_ERROR": "Invalid phone",
+      "DIALOG_ACTIONS_CANCEL_BUTTON": "Cancel",
+      "DIALOG_ACTIONS_SAVE_BUTTON": "Save"
+    }
+  },
+
+  "DASHBOARD": {
+    "PAGE_TITLE": "Reports",
+
+    "DATA_OPTIONS_DAY": "Day",
+    "DATA_OPTIONS_WEEK": "Week",
+    "DATA_OPTIONS_MONTH": "Month",
+    "DATA_OPTIONS_YEAR": "Year",
+
+    "DASHBOARD_OVERVIEW_ORDERS_CARD_TITLE": "Orders",
+    "REDIRECT_TO_ORDERS_PAGE_BUTTON_LABEL": "Orders",
+    "DASHBOARD_OVERVIEW_CUSTOMERS_CARD_TITLE": "Customers",
+    "REDIRECT_TO_CUSTOMERS_PAGE_BUTTON_LABEL": "Customers",
+    "DASHBOARD_OVERVIEW_REVENUE_CARD_TITLE": "Monthly Revenue",
+
+    "ORDERS_STATUS_MANAGEMENT_NEW_TITLE": "New Orders",
+    "ORDERS_STATUS_MANAGEMENT_CONFIRMED_TITLE": "Confirmed Orders",
+    "ORDERS_STATUS_MANAGEMENT_REJECTED_TITLE": "Rejected Orders",
+
+    "CUSTOMERS_TABLE": {
+      "TITLE": "Latest Customers",
+      "REDIRECT_TO_CUSTOMERS": "View all",
+      "NR_OF_ORDERS_CELL_TEXT_ADDITION": "orders placed",
+      "MONEY_SPENT_CELL_TEXT_ADDITION": "spent"
+    },
+
+    "ORDERS_CHART": {
+      "TITLE": "Orders Statistics",
+      "CHART_LABEL": "Orders",
+
+      "CHART_INFO_PERIOD_WEEK": "Last 7 days",
+      "CHART_INFO_PERIOD_MONTH": "Last month",
+      "CHART_INFO_PERIOD_YEAR": "Last year"
+    },
+
+    "ORDERS_TABLE": {
+      "TITLE": "Latest Orders",
+      "REDIRECT_TO_ORDERS": "View all",
+      "NR_OF_WORKPLACES_CELL_TEXT_ADDITION": "workplaces",
+      "TOTAL_CELL_TEXT_ADDITION": "total",
+      "FROM_DATE_CELL_TEXT_ADDITION": "From",
+      "TO_DATE_CELL_TEXT_ADDITION": "To"
+    },
+
+    "REVENUE_CHART": {
+      "TITLE": "Revenue Statistics",
+      "CHART_LABEL": "Revenue",
+
+      "CHART_INFO_PERIOD_WEEK": "Last 7 days",
+      "CHART_INFO_PERIOD_MONTH": "Last month",
+      "CHART_INFO_PERIOD_YEAR": "Last year"
+    },
+
+    "DAYS_OF_WEEK": {
+      "MONDAY": "Monday",
+      "TUESDAY": "Tuesday",
+      "WEDNESDAY": "Wednesday",
+      "THURSDAY": "Thursday",
+      "FRIDAY": "Friday",
+      "SATURDAY": "Saturday",
+      "SUNDAY": "Sunday"
+    },
+
+    "MONTHS_OF_YEAR": {
+      "JANUARY": "January",
+      "FEBRUARY": "February",
+      "MARCH": "March",
+      "APRIL": "April",
+      "MAY": "May",
+      "JUNE": "June",
+      "JULY": "July",
+      "AUGUST": "August",
+      "SEPTEMBER": "September",
+      "OCTOBER": "October",
+      "NOVEMBER": "November",
+      "DECEMBER": "December"
+    }
+  },
+
+  "NOT_FOUND": {
+    "PAGE_TITLE": "Nothing here!",
+    "PAGE_SUBTITLE": "The page requested does not exist.",
+    "REDIRECT_TO_DASHBOARD_BUTTON_LABEL": "Return to dashboard"
+  },
+
+  "ORDERS": {
+    "CREATE": {
+      "REDIRECT_TO_ORDERS_PAGE_BUTTON_LABEL": "Orders",
+      "PAGE_TITLE": "Create Order",
+      "USERNAME_LABEL": "Username",
+      "USERNAME_PLACEHOLDER": "Select a customer",
+      "USERNAME_REQUIRED_ERROR": "Username is required",
+      "EMAIL_LABEL": "Email address",
+      "EMAIL_REQUIRED_ERROR": "Email is required",
+      "EMAIL_INVALID_ERROR": "Invalid email",
+      "BOOKED_FROM_LABEL": "Booked From",
+      "BOOKED_FROM_PLACEHOLDER": "MM/DD/YYYY",
+      "BOOKED_FROM_REQUIRED_ERROR": "Date is required",
+      "BOOKED_TO_LABEL": "Booked To",
+      "BOOKED_ТО_PLACEHOLDER": "MM/DD/YYYY",
+      "BOOKED_TO_REQUIRED_ERROR": "Date is required",
+      "BOOKED_TO_SMALLER_THAN_BOOKED_FROM_ERROR": "Booked To should be greater than Booked From",
+      "STATUS_LABEL": "Status",
+      "STATUS_PLACEHOLDER": "Select Status",
+      "STATUS_REQUIRED_ERROR": "Status is required",
+      "PAYMENT_STATUS_LABEL": "Payment Status",
+      "PAYMENT_STATUS_PLACEHOLDER": "Select Payment Status",
+      "PAYMENT_STATUS_REQUIRED_ERROR": "Payment status is required",
+      "ADD_WORKPLACE_BUTTON_LABEL": "Add workplace",
+      "NO_SELECTED_WORKPLACE_ERROR": "You have to select workplaces",
+
+      "SELECTED_WORKPLACES_TABLE": {
+        "ID": "ID",
+        "NAME": "Name",
+        "DESCRIPTION": "Description",
+        "BOOKING_PRICE": "Booking Price",
+
+        "TOTAL": "Total"
+      },
+
+      "ADDITIONAL_NOTES_LABEL": "Additional Notes",
+      "ADDITIONAL_NOTES_PLACEHOLDER": "Add additional notes",
+      "CANCEL_BUTTON_LABEL": "Cancel",
+      "CREATE_BUTTON_LABEL": "Create",
+
+      "WORKPLACES_DIALOG_TABLE": {
+        "HEADER_LABEL": "Order Details",
+        "ID": "Workplace Id",
+        "NAME": "Name",
+        "DESCRIPTION": "Description",
+        "BOOKING_PRICE": "Booking Price",
+
+        "ROOM_ID_TEXT_ADDITION": "Room Id:",
+        "CANCEL_BUTTON_LABEL": "Cancel",
+        "ADD_BUTTON_LABEL": "Add"
+      }
+    },
+
+    "EDIT": {
+      "REDIRECT_TO_ORDERS_PAGE_BUTTON_LABEL": "Orders",
+      "PAGE_TITLE": "Order",
+
+      "ORDER_DETAILS_CARD": {
+        "HEADER": "Order Details",
+        "EDIT_BUTTON_LABEL": "Edit",
+        "CUSTOMER_LABEL": "Customer",
+        "EMAIL_LABEL": "Email address",
+        "PHONE_LABEL": "Phone number",
+        "ORDER_STATUS_LABEL": "Order status",
+        "BOOKED_FROM_LABEL": "Booked from",
+        "BOOKED_TO_LABEL": "Booked to",
+        "PAYMENT_STATUS_LABEL": "Payment status"
+      },
+
+      "ORDER_ITEMS_CARD": {
+        "HEADER": "Order Items",
+
+        "ORDERS_TABLE": {
+          "ID": "Id",
+          "NAME": "Name",
+          "DESCRIPTION": "Description",
+          "BOOKING_PRICE": "Booking Price",
+          "SUBTOTAL": "Subtotal",
+          "DISCOUNT": "Discount",
+          "TOTAL": "Total"
+        }
+      },
+
+      "QUICK_ACTIONS_CARD": {
+        "HEADER": "Quick Actions",
+        "SELECT_STATUS_PLACEHOLDER": "Select Status",
+        "SAVE_CHANGES_BUTTON_LABEL": "Save Changes",
+        "LAST_UPDATED_TEXT_ADDITION": "Updated",
+
+        "STEPPER": {
+          "PLACED_AT_LABEL": "Placed At",
+          "PROCESSED_LABEL": "Processed",
+          "COMPLETE_LABEL": "Complete"
+        },
+
+        "MARK_AS_PAID_BUTTON_LABEL": "Mark as paid",
+        "DELETE_ORDER_BUTTON_LABEL": "Delete order"
+      },
+
+      "EDIT_ORDER_DETAILS_DIALOG_FORM": {
+        "CUSTOMER_LABEL": "Customer",
+        "CUSTOMER_PLACEHOLDER": "Select a Customer",
+        "CUSTOMER_REQUIRED_ERROR": "Customer is required",
+        "EMAIL_LABEL": "Email",
+        "EMAIL_REQUIRED_ERROR": "Email is required",
+        "EMAIL_INVALID_ERROR": "Invalid email",
+        "PHONE_LABEL": "Phone",
+        "PHONE_REQUIRED_ERROR": "Phone is required",
+        "PHONE_INVALID_ERROR": "Invalid phone",
+        "BOOKED_FROM_LABEL": "Booked From",
+        "BOOKED_FROM_PLACEHOLDER": "MM/DD/YYYY",
+        "BOOKED_FROM_REQUIRED_ERROR": "Date is required",
+        "BOOKED_TO_LABEL": "Booked To",
+        "BOOKED_TO_PLACEHOLDER": "MM/DD/YYYY",
+        "BOOKED_TO_REQUIRED_ERROR": "Date is required",
+        "BOOKED_TO_SMALLER_THAN_BOOKED_FROM_ERROR": "Booked To should be greater than Booked From",
+        "STATUS_LABEL": "Status",
+        "STATUS_PLACEHOLDER": "Select Status",
+        "STATUS_REQUIRED_ERROR": "Status is required",
+        "PAYMENT_STATUS_LABEL": "Payment Status",
+        "PAYMENT_STATUS_PLACEHOLDER": "Payment Status",
+        "PAYMENT_STATUS_REQUIRED_ERROR": "Payment status is required",
+        "DIALOG_ACTIONS_CANCEL_BUTTON": "Cancel",
+        "DIALOG_ACTIONS_SAVE_BUTTON": "Save Changes"
+      }
+    },
+
+    "VIEW": {
+      "PAGE_TITLE": "Orders",
+      "NEW_BUTTON_LABEL": "New",
+      "GLOBAL_SEARCH_INPUT_PLACEHOLDER": "Search keyword",
+
+      "TABLE_HEADER": {
+        "ID": "Id",
+        "CREATED_AT": "Created At",
+        "USERNAME": "User name",
+        "BOOKED_FROM": "Booked From",
+        "BOOKED_TO": "Booked To",
+        "NUMBER_OF_WORKPLACES": "Nr. of workplaces",
+        "TOTAL": "Total",
+        "STATUS": "Status"
+      },
+
+      "FILTER_STATUS_PLACEHOLDER": "Select Status",
+
+      "GLOBAL_SEARCH_PLACEHOLDER": "No entries found.",
+
+      "ORDERS_OVERVIEW": {
+        "TITLE": "Total met Income",
+        "FOOTER_LEFT": "From a total of",
+        "FOOTER_RIGHT": "Orders",
+
+        "CHART_LABEL_PAID": "Paid",
+        "CHART_LABEL_NOT_PAID": "Not Paid"
+      }
+    }
+  },
+
+  "SETTINGS": {
+    "USER_SETTINGS": {
+      "SECTION_TITLE": "Account Settings",
+      "CHANGE_USER_AVATAR_BUTTON_LABEL": "Change",
+      "DELETE_USER_AVATAR_BUTTON_LABEL": "Delete",
+      "USERNAME_LABEL": "Username",
+      "USERNAME_REQUIRED_ERROR": "Username is required",
+      "EMAIL_LABEL": "Email address",
+      "EMAIL_REQUIRED_ERROR": "Email is required",
+      "EMAIL_INVALID_ERROR": "Invalid email",
+      "SAVE_BUTTON_LABEL": "Save changes"
+    },
+
+    "PASSWORD_SETTINGS": {
+      "SECTION_TITLE": "Change Password",
+      "CURRENT_PASSWORD_LABEL": "Current password",
+      "CURRENT_PASSWORD_REQUIRED_ERROR": "Current password is required",
+      "NEW_PASSWORD_LABEL": "New password",
+      "NEW_PASSWORD_REQUIRED_ERROR": "New password is required",
+      "NEW_PASSWORD_MATCH_ERROR": "The new Password should be different from the old one",
+      "CONFIRM_PASSWORD_LABEL": "Confirm password",
+      "CONFIRM_PASSWORD_REQUIRED_ERROR": "Confirm Password is required",
+      "CONFIRM_PASSWORD_MISMATCH": "Passwords do not match",
+      "CHANGE_PASSWORD_BUTTON_LABEL": "Change password"
+    }
+  }
+}

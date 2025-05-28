@@ -1,0 +1,53 @@
+:host::ng-deep {
+  .p-confirm-dialog {
+    border-radius: 1rem;
+  }
+}
+
+.confirm-dialog-container {
+  background: #fff;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 1rem;
+  gap: 1rem;
+  color: #000;
+  max-width: 400px;
+
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 0 0 0;
+    width: 100%;
+    gap: 0.2rem;
+  }
+
+  .icon-wrapper {
+    padding: 1rem;
+    border-radius: 50%;
+    background: #62b771;
+
+    i {
+      font-size: 2rem;
+    }
+  }
+
+  .confirm-dialog-message-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.7rem;
+    font-size: 1.2rem;
+    text-align: center;
+
+    .confirm-dialog-header {
+      font-weight: 400;
+    }
+
+    .confirm-dialog-message {
+      font-weight: 600;
+      color: #73cc73;
+    }
+  }
+}

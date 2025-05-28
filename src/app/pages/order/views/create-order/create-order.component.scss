@@ -1,0 +1,100 @@
+:host ::ng-deep {
+  .p-divider {
+    margin: 1rem 0;
+    width: 100%;
+  }
+
+  .p-calendar {
+    width: 100%;
+  }
+
+  .p-dropdown {
+    width: 100%;
+  }
+
+  .p-dropdown-clear-icon.p-icon {
+    top: 17px;
+  }
+
+  .p-dropdown-filter-icon.p-icon {
+    top: 17px;
+  }
+}
+
+section {
+  margin: 1rem 0;
+
+  .return-button {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+
+    .header-title {
+      font-weight: 600;
+      font-size: 1.5em;
+    }
+  }
+
+  .order-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    .field-aligner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      width: 100%;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      width: 100%;
+
+      label {
+        font-weight: 600;
+        font-size: 1.2rem;
+      }
+    }
+
+    .add-workplaces {
+      display: flex;
+      gap: 30%;
+    }
+
+    .table-footer {
+      display: flex;
+      justify-content: end;
+    }
+  }
+
+  .form-action-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 1rem 0.5rem 1rem;
+  }
+
+  .icon-button {
+    display: flex;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+  }
+}
+
+@media (max-width: 650px) {
+  section {
+    .order-form {
+      .field-aligner {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+}

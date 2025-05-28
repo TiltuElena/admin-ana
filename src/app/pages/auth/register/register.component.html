@@ -1,0 +1,123 @@
+<div class="card">
+  <div class="register-form-container">
+    <span class="register-form-header">
+      <h2 class="register-form-header-item">
+        {{ 'REGISTER.FORM_TITLE' | translate }}
+      </h2>
+      <h4 class="register-form-header-item" [routerLink]="loginRoute">
+        {{ 'REGISTER.REDIRECT_TO_LOGIN' | translate }}
+      </h4>
+    </span>
+
+    <form class="register-form" [formGroup]="registerForm">
+      <div class="register-form-fields">
+        <div class="form-field">
+          <span> {{ 'REGISTER.USERNAME_LABEL' | translate }}</span>
+          <input
+            type="text"
+            pInputText
+            formControlName="username"
+            id="username"
+            [ngClass]="{
+              'ng-invalid ng-dirty':
+                registerForm.get('username')?.touched &&
+                registerForm.get('username')?.invalid
+            }"
+          />
+          @if(registerForm.get('username')?.hasError('required') &&
+          registerForm.get('username')?.touched){
+          <div class="p-error">
+            {{ 'REGISTER.USERNAME_REQUIRED_ERROR' | translate }}
+          </div>
+          }
+        </div>
+        <div class="form-field">
+          <span> {{ 'REGISTER.EMAIL_LABEL' | translate }}</span>
+          <input
+            type="text"
+            pInputText
+            formControlName="email"
+            id="email"
+            [ngClass]="{
+              'ng-invalid ng-dirty':
+                registerForm.get('email')?.touched &&
+                registerForm.get('email')?.invalid
+            }"
+          />
+          @if(registerForm.get('email')?.hasError('required') &&
+          registerForm.get('email')?.touched){
+          <div class="p-error">
+            {{ 'REGISTER.EMAIL_REQUIRED_ERROR' | translate }}
+          </div>
+          } @else if (registerForm.get('email')?.hasError('email')){
+          <div class="p-error">
+            {{ 'REGISTER.EMAIL_INVALID_ERROR' | translate }}
+          </div>
+          }
+        </div>
+        <div class="form-field">
+          <span> {{ 'REGISTER.PASSWORD_LABEL' | translate }}</span>
+          <p-password
+            formControlName="password"
+            required
+            [toggleMask]="true"
+            [feedback]="false"
+            id="password"
+            [ngClass]="{
+              'ng-invalid ng-dirty':
+                registerForm.get('password')?.touched &&
+                registerForm.get('password')?.invalid
+            }"
+          />
+          @if(registerForm.get('password')?.invalid &&
+          registerForm.get('password')?.touched){
+          <div class="p-error">
+            {{ 'REGISTER.PASSWORD_REQUIRED_ERROR' | translate }}
+          </div>
+          }
+        </div>
+        <div class="form-field">
+          <span> {{ 'REGISTER.CONFIRM_PASSWORD_LABEL' | translate }}</span>
+          <p-password
+            formControlName="confirm_password"
+            required
+            [toggleMask]="true"
+            [feedback]="false"
+            id="confirm_password"
+            [ngClass]="{
+              'ng-invalid ng-dirty':
+                registerForm.get('confirm_password')?.touched &&
+                registerForm.get('confirm_password')?.invalid
+            }"
+          />
+          @if(registerForm.get('confirm_password')?.invalid &&
+          registerForm.get('confirm_password')?.touched){
+          <div class="p-error">
+            {{ 'REGISTER.CONFIRM_PASSWORD_REQUIRED_ERROR' | translate }}
+          </div>
+          }
+        </div>
+      </div>
+
+      <div class="button-container">
+        <!--        <p-button-->
+        <!--          label="Register"-->
+        <!--          [raised]="true"-->
+        <!--          (click)="submit()"-->
+        <!--          severity="success"-->
+        <!--        ></p-button>-->
+
+        <button
+          pButton
+          pRipple
+          [raised]="true"
+          (click)="submit()"
+          severity="success"
+          class="button"
+        >
+         <span> {{ 'REGISTER.SUBMIT_BUTTON_TITLE' | translate }}</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

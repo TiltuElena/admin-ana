@@ -1,0 +1,40 @@
+<div class="sidenav" [ngClass]="collapsed ? 'sidenav-collapsed' : ''">
+  <!--  <div class="logo-container">-->
+  <!--    <button class="logo" (click)="toggleCollapse()">N</button>-->
+  <!--    @if(collapsed){-->
+  <!--    <div class="logo-text" @fadeInOut></div>-->
+  <!--    <button class="btn-close" @fadeInOut (click)="closeSidenav()">-->
+  <!--      <span class="pi pi-times"></span>-->
+  <!--    </button>-->
+  <!--    }-->
+  <!--  </div>-->
+
+  <div class="sidenav-nav-container">
+    <ul class="sidenav-nav">
+      @for(data of sidebarData; track data){
+      <li class="sidenav-nav-item">
+        <span
+          class="sidenav-nav-link"
+          [routerLink]="data.routeLink"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          <span class="sidenav-link-icon" [class]="data.icon"></span>
+          @if(collapsed){
+          <span class="sidenav-link-text" @fadeInOut>{{ data.label }}</span>
+          }
+        </span>
+      </li>
+      }
+    </ul>
+    <hr />
+  </div>
+
+  <div class="nav-toggle-button">
+    <button class="logo" (click)="toggleCollapse()">
+      <span
+        [class]="collapsed ? 'pi pi-angle-left' : 'pi pi-angle-right'"
+      ></span>
+    </button>
+  </div>
+</div>

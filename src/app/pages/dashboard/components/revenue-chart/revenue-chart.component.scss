@@ -1,0 +1,48 @@
+:host ::ng-deep {
+  .p-menu {
+    width: 8.5rem;
+  }
+
+  .p-menuitem-content {
+    padding: 0.5rem;
+    cursor: pointer;
+    text-align: center;
+  }
+}
+
+.card-wrapper {
+  width: 100%;
+
+  .chart-card-header {
+    font-size: 1.5rem;
+    font-weight: 600;
+    font-family: Inter, sans-serif;
+    padding: 1rem 0 1rem 5%;
+    display: flex;
+    justify-content: space-between;
+
+    .chart-menu {
+      display: flex;
+      gap: 0.5rem;
+    }
+  }
+
+  .chart {
+    display: block;
+    padding: 0 5rem;
+
+    canvas {
+      display: block;
+      width: 100% !important;
+      height: 100% !important;
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .card-wrapper {
+    .chart {
+      padding: 0;
+    }
+  }
+}

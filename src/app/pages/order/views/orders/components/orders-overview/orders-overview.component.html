@@ -1,0 +1,52 @@
+<div class="card">
+  <p-card>
+    <div class="chart-card">
+      <div class="orders-overview">
+        <span class="orders-overview-title">
+          {{ 'ORDERS.VIEW.ORDERS_OVERVIEW.TITLE' | translate }}</span
+        >
+        <span class="orders-overview-total">{{ totalOrdersPrice | mdlCurrency }}</span>
+        <span class="orders-overview-footer">
+          {{ 'ORDERS.VIEW.ORDERS_OVERVIEW.FOOTER_LEFT' | translate }}
+          {{ totalOrders }}
+          {{ 'ORDERS.VIEW.ORDERS_OVERVIEW.FOOTER_RIGHT' | translate }}</span
+        >
+      </div>
+
+      <div class="chart-wrapper">
+        <div class="payment-status-chart">
+          <canvas
+            id="doughnut-chart"
+            baseChart
+            [data]="doughnutChartData"
+            [options]="doughnutChartOptions"
+            [type]="doughnutChartType"
+            [legend]="false"
+          >
+          </canvas>
+        </div>
+
+        <div class="chart-legend">
+          <div class="legend-indicator">
+            <div class="legend-indicator-item">
+              <span class="legend-color-indicator paid"></span>
+              <span class="legend-title">{{
+                'ORDERS.VIEW.ORDERS_OVERVIEW.CHART_LABEL_PAID' | translate
+              }}</span>
+            </div>
+            <div class="legend-indicator-total">{{ paidOrdersPrice | mdlCurrency }}</div>
+          </div>
+          <div class="legend-indicator">
+            <div class="legend-indicator-item">
+              <span class="legend-color-indicator not-paid"></span>
+              <span class="legend-title">{{
+                'ORDERS.VIEW.ORDERS_OVERVIEW.CHART_LABEL_NOT_PAID' | translate
+              }}</span>
+            </div>
+            <div class="legend-indicator-total">{{ notPaidOrdersPrice | mdlCurrency }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </p-card>
+</div>

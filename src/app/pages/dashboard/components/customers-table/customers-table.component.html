@@ -1,0 +1,65 @@
+<div class="table-card table-customers">
+  <p-card>
+    <div class="customers-table-header">
+      <span class="customers-table-header-title">
+        {{ 'DASHBOARD.CUSTOMERS_TABLE.TITLE' | translate }}
+      </span>
+      <button
+        pButton
+        pRipple
+        [text]="true"
+        [plain]="true"
+        (click)="redirectToCustomers()"
+      >
+        <span>{{
+          'DASHBOARD.CUSTOMERS_TABLE.REDIRECT_TO_CUSTOMERS'
+            | translate
+        }}</span>
+      </button>
+    </div>
+
+    <p-divider />
+
+    <p-table [value]="customers">
+      <ng-template pTemplate="body" let-customer>
+        <tr>
+          <td>{{ customer.createdAt | date }}</td>
+          <td>
+            <div class="table-cell-compound-row">
+              <img
+                [alt]="customer.username"
+                [src]="customer.photoUrl ? 'http://localhost:3000' + customer.photoUrl : defaultImage"
+                style="width: 30px; height: 30px; border-radius: 50%"
+              />
+              <span>{{ customer.username }}</span>
+            </div>
+          </td>
+          <td class="table-cell-compound-column">
+            <div>
+              <span class="text-base">
+                {{ customer.orderCount }}
+              </span>
+              <span class="text-addition">
+                {{
+                  'DASHBOARD.CUSTOMERS_TABLE.NR_OF_ORDERS_CELL_TEXT_ADDITION'
+                    | translate
+                }}</span
+              >
+            </div>
+            <div>
+              <span class="text-base">
+                {{ customer.total_booking_price | mdlCurrency }}
+              </span>
+              <span class="text-addition">
+                {{
+                  'DASHBOARD.CUSTOMERS_TABLE.MONEY_SPENT_CELL_TEXT_ADDITION'
+                    | translate
+                }}</span
+              >
+            </div>
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </p-card>
+</div>

@@ -1,0 +1,163 @@
+<section>
+  <h2>{{ 'DASHBOARD.PAGE_TITLE' | translate }}</h2>
+
+<!--  <div class="button-group-container">-->
+<!--    <p-selectButton-->
+<!--      [options]="dataOptions"-->
+<!--      [(ngModel)]="selectedDataOption"-->
+<!--      (ngModelChange)="onDataOptionChange($event)"-->
+<!--      optionLabel="title"-->
+<!--      optionValue="value"-->
+<!--    >-->
+<!--    </p-selectButton>-->
+<!--  </div>-->
+
+  <div class="dashboard-overview">
+    <p-card class="card">
+      <div class="card-header">
+        <div class="icon-wrapper">
+          <span class="pi pi-receipt header-icon"> </span>
+        </div>
+        <div class="card-header-right">
+          <span class="card-header-title">
+            {{
+              'DASHBOARD.DASHBOARD_OVERVIEW_ORDERS_CARD_TITLE' | translate
+            }}</span
+          >
+          <span class="card-header-subtitle">{{totalOrders}}</span>
+        </div>
+      </div>
+
+      <p-divider />
+      <button
+        pButton
+        pRipple
+        class="dashboard-overview-button"
+        [text]="true"
+        [plain]="true"
+        (click)="redirectToOrder()"
+      >
+        <span>{{
+          'DASHBOARD.REDIRECT_TO_ORDERS_PAGE_BUTTON_LABEL' | translate
+        }}</span>
+        <span class="pi pi-arrow-right"> </span>
+      </button>
+    </p-card>
+    <p-card class="card">
+      <div class="card-header">
+        <div class="icon-wrapper">
+          <span class="pi pi-user header-icon"> </span>
+        </div>
+        <div class="card-header-right">
+          <span class="card-header-title">
+            {{
+              'DASHBOARD.DASHBOARD_OVERVIEW_CUSTOMERS_CARD_TITLE' | translate
+            }}</span
+          >
+          <span class="card-header-subtitle">{{totalUsers}}</span>
+        </div>
+      </div>
+
+      <p-divider />
+      <button
+        pButton
+        pRipple
+        class="dashboard-overview-button"
+        [text]="true"
+        [plain]="true"
+        (click)="redirectToCustomer()"
+      >
+        <span>{{
+          'DASHBOARD.REDIRECT_TO_CUSTOMERS_PAGE_BUTTON_LABEL' | translate
+        }}</span>
+        <span class="pi pi-arrow-right"> </span>
+      </button>
+    </p-card>
+
+    <p-card class="card">
+      <div class="card-header">
+        <div class="icon-wrapper">
+          <span class="pi pi-dollar header-icon"> </span>
+        </div>
+        <div class="card-header-right">
+          <span class="card-header-title">
+            {{
+              'DASHBOARD.DASHBOARD_OVERVIEW_REVENUE_CARD_TITLE' | translate
+            }}</span
+          >
+          <span class="card-header-subtitle">{{totalOrdersPrice | mdlCurrency}}</span>
+        </div>
+      </div>
+
+      <p-divider />
+      <button
+        pButton
+        pRipple
+        class="dashboard-overview-button"
+        [text]="true"
+        [plain]="true"
+        (click)="redirectToOrder()"
+      >
+        <span>{{
+          'DASHBOARD.REDIRECT_TO_ORDERS_PAGE_BUTTON_LABEL' | translate
+        }}</span>
+        <span class="pi pi-arrow-right"> </span>
+      </button>
+    </p-card>
+  </div>
+
+  <app-revenue-chart></app-revenue-chart>
+
+  <div class="table-cards">
+    <app-customers-table></app-customers-table>
+    <app-orders-table></app-orders-table>
+  </div>
+
+  <div class="bottom-wrapper">
+    <app-orders-chart></app-orders-chart>
+    <div class="order-status-management">
+      <p-card class="card">
+        <div class="card-header">
+          <div class="icon-wrapper">
+            <span class="pi pi-exclamation-circle header-icon new-order">
+            </span>
+          </div>
+          <div class="card-header-right">
+            <span class="card-header-title">
+              {{ 'DASHBOARD.ORDERS_STATUS_MANAGEMENT_NEW_TITLE' | translate }}
+            </span>
+            <span class="card-header-subtitle">{{totalNewOrders}}</span>
+          </div>
+        </div>
+      </p-card>
+      <p-card class="card">
+        <div class="card-header">
+          <div class="icon-wrapper">
+            <span class="pi pi-check-circle header-icon"> </span>
+          </div>
+          <div class="card-header-right">
+            <span class="card-header-title">
+              {{
+                'DASHBOARD.ORDERS_STATUS_MANAGEMENT_CONFIRMED_TITLE' | translate
+              }}
+            </span>
+            <span class="card-header-subtitle">{{totalConfirmedOrders }}</span>
+          </div>
+        </div>
+      </p-card>
+      <p-card class="card">
+        <div class="card-header">
+          <div class="icon-wrapper">
+            <span class="pi pi-times-circle header-icon rejected-order"> </span>
+          </div>
+          <div class="card-header-right">
+            <span class="card-header-title">{{
+              'DASHBOARD.ORDERS_STATUS_MANAGEMENT_REJECTED_TITLE' | translate
+            }}</span>
+            <span class="card-header-subtitle">{{totalRejectedOrders}}</span>
+          </div>
+        </div>
+      </p-card>
+    </div>
+  </div>
+</section>

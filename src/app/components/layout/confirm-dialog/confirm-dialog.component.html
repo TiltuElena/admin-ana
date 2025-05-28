@@ -1,0 +1,31 @@
+<p-confirmDialog #cd key="uniqueidofdialog" [dismissableMask]="true">
+  <ng-template pTemplate="headless" let-message>
+    <div class="confirm-dialog-container">
+      <div class="icon-wrapper">
+        <i class="pi pi-question"></i>
+      </div>
+      <div class="confirm-dialog-message-container">
+        <span class="confirm-dialog-header">
+          {{ message.header }}
+        </span>
+        <span class="confirm-dialog-message">{{ message.message }}</span>
+      </div>
+
+      <div class="button-container">
+        <button
+          pButton
+          label="Cancel"
+          [outlined]="true"
+          (click)="cd.reject()"
+          severity="danger"
+        ></button>
+        <button
+          pButton
+          severity="success"
+          label="Ok"
+          (click)="cd.accept()"
+        ></button>
+      </div>
+    </div>
+  </ng-template>
+</p-confirmDialog>

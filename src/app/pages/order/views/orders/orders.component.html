@@ -1,0 +1,258 @@
+<div class="page-header">
+  {{ 'ORDERS.VIEW.PAGE_TITLE' | translate }}
+</div>
+
+<app-orders-overview></app-orders-overview>
+
+<div class="card">
+  <p-table
+    #dt
+    [value]="orders$.getValue()"
+    [rowHover]="true"
+    [rows]="5"
+    [rowsPerPageOptions]="[5, 10, 15]"
+    [loading]="loading"
+    [paginator]="true"
+    [globalFilterFields]="['username', 'bookingDate', 'status', 'totalPrice', 'number_of_workplaces']"
+    [tableStyle]="{ width: '100%' }"
+    (sortFunction)="customSort($event)"
+    [customSort]="true"
+  >
+    <ng-template pTemplate="caption">
+      <div class="table-caption">
+        <button
+          pButton
+          pRipple
+          type="button"
+          severity="success"
+          class="icon-button new-button"
+          (click)="openNew()"
+        >
+          <span class="pi pi-plus"></span>
+          <span>
+            {{ 'ORDERS.VIEW.NEW_BUTTON_LABEL' | translate }}
+          </span>
+        </button>
+        <div>
+          <p-iconField iconPosition="left">
+            <p-inputIcon>
+              <i class="pi pi-search"></i>
+            </p-inputIcon>
+            <input
+              pInputText
+              type="text"
+              (input)="dt.filterGlobal($any($event.target).value, 'contains')"
+              placeholder="{{
+                'ORDERS.VIEW.GLOBAL_SEARCH_INPUT_PLACEHOLDER' | translate
+              }}"
+            />
+          </p-iconField>
+        </div>
+      </div>
+    </ng-template>
+    <ng-template pTemplate="header">
+      <tr>
+        <th pSortableColumn="id" style="">
+          <div class="table-header">
+            <span>
+              {{ 'ORDERS.VIEW.TABLE_HEADER.ID' | translate }}
+            </span>
+            <span class="sort-icon-wrapper"><p-sortIcon field="id" /></span>
+          </div>
+        </th>
+        <th pSortableColumn="bookingDate" style="">
+          <div class="table-header">
+            <span>
+              {{ 'ORDERS.VIEW.TABLE_HEADER.CREATED_AT' | translate }}
+            </span>
+            <span class="sort-icon-wrapper">
+              <p-sortIcon field="bookingDate" />
+            </span>
+          </div>
+        </th>
+        <th pSortableColumn="username" style="">
+          <div class="table-header">
+            <span>
+              {{ 'ORDERS.VIEW.TABLE_HEADER.USERNAME' | translate }}
+            </span>
+            <span class="sort-icon-wrapper"
+              ><p-sortIcon field="username"
+            /></span>
+            <p-columnFilter
+              [showAddButton]="false"
+              [showOperator]="false"
+              type="text"
+              field="username"
+              display="menu"
+            />
+          </div>
+        </th>
+        <th pSortableColumn="bookedFrom" style="">
+          <div class="table-header">
+            <span>{{
+              'ORDERS.VIEW.TABLE_HEADER.BOOKED_FROM' | translate
+            }}</span>
+            <span class="sort-icon-wrapper">
+              <p-sortIcon field="bookedFrom" />
+            </span>
+          </div>
+        </th>
+        <th pSortableColumn="bookedTo" style="">
+          <div class="table-header">
+            <span>{{ 'ORDERS.VIEW.TABLE_HEADER.BOOKED_TO' | translate }}</span>
+            <span class="sort-icon-wrapper">
+              <p-sortIcon field="bookedTo" />
+            </span>
+          </div>
+        </th>
+
+        <th pSortableColumn="number_of_workplaces" style="">
+          <div class="table-header">
+            <span>{{ 'ORDERS.VIEW.TABLE_HEADER.NUMBER_OF_WORKPLACES' | translate }}</span>
+            <span class="sort-icon-wrapper">
+              <p-sortIcon field="number_of_workplaces" />
+            </span>
+          </div>
+        </th>
+        <!--        <th pSortableColumn="workplaces" style="width: 20%">-->
+        <!--          <div class="table-header">-->
+        <!--            <span>Workplaces</span>-->
+        <!--            <span class="sort-icon-wrapper">-->
+        <!--              <p-sortIcon field="workplaces" />-->
+        <!--            </span>-->
+        <!--          </div>-->
+        <!--        </th>-->
+        <th pSortableColumn="totalPrice" style="">
+          <div class="table-header">
+            <span>{{ 'ORDERS.VIEW.TABLE_HEADER.TOTAL' | translate }}</span>
+            <span class="sort-icon-wrapper">
+              <p-sortIcon field="totalPrice" />
+            </span>
+          </div>
+        </th>
+        <th pSortableColumn="status" style="">
+          <div class="table-header">
+            <div>{{ 'ORDERS.VIEW.TABLE_HEADER.STATUS' | translate }}</div>
+            <span class="sort-icon-wrapper">
+              <p-sortIcon field="status" />
+            </span>
+            <p-columnFilter
+              [showAddButton]="false"
+              [showOperator]="false"
+              [showMatchModes]="false"
+              type="text"
+              field="status"
+              display="menu"
+            >
+              <ng-template pTemplate="filter" let-filter>
+                <p-dropdown
+                  [options]="statusOptions"
+                  placeholder="{{
+                    'ORDERS.VIEW.FILTER_STATUS_PLACEHOLDER' | translate
+                  }}"
+                  (onChange)="dt.filter($event.value, 'status', 'equals')"
+                >
+                  <ng-template let-option pTemplate="item">
+                    <p-tag
+                      [value]="option.value"
+                      [severity]="getSeverity(option.value)"
+                    />
+                  </ng-template>
+                </p-dropdown>
+              </ng-template>
+            </p-columnFilter>
+          </div>
+        </th>
+        <th style="width: 5%"></th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-order>
+      <tr>
+        <td>
+          <span>
+            {{ order.id }}
+          </span>
+        </td>
+        <td>
+          <span>
+            {{ order.bookingDate | date }}
+          </span>
+        </td>
+        <td>
+          <span>
+            {{ order.username }}
+          </span>
+        </td>
+        <td>
+          <span> {{ order.bookedFrom | date }}</span>
+        </td>
+        <td>
+          <span>
+            {{ order.bookedTo | date }}
+          </span>
+        </td>
+
+        <td>
+          <span>
+            {{ order.number_of_workplaces }}
+          </span>
+        </td>
+        <!--        <td>-->
+        <!--          <div>-->
+        <!--            @for(workplace of order.workplaces; track workplace; let i =-->
+        <!--            $index){-->
+        <!--              <p-chip [label]="workplace.id" icon="pi pi-briefcase"/>-->
+        <!--            }-->
+        <!--          </div>-->
+        <!--        </td>-->
+        <td>
+          <span>
+            {{ order.totalPrice | mdlCurrency }}
+          </span>
+        </td>
+        <td>
+          <p-tag
+            [value]="order.status.toUpperCase()"
+            [severity]="getSeverity(order.status.toUpperCase())"
+          />
+        </td>
+        <td>
+          <div class="button-wrapper">
+            <button
+              pButton
+              pRipple
+              type="button"
+              icon="pi pi-pencil"
+              (click)="editCustomer(order)"
+              class="p-button-rounded p-button-text"
+            ></button>
+            <button
+              pButton
+              pRipple
+              type="button"
+              icon="pi pi-trash"
+              (click)="deleteCustomer(order)"
+              class="p-button-rounded p-button-text p-button-danger"
+            ></button>
+
+            <!--            <button-->
+            <!--              pButton-->
+            <!--              pRipple-->
+            <!--              type="button"-->
+            <!--              icon="pi pi-ellipsis-v"-->
+            <!--              (click)="editCustomer(order)"-->
+            <!--              class="p-button-rounded p-button-text"-->
+            <!--            ></button>-->
+          </div>
+        </td>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="emptymessage">
+      <tr>
+        <td colspan="8">
+          {{ 'ORDERS.VIEW.GLOBAL_SEARCH_PLACEHOLDER' | translate }}
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>

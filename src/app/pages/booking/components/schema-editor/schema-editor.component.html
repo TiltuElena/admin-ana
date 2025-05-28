@@ -1,0 +1,309 @@
+<div class="card">
+  <p-card>
+    @if(workplace){
+    <h2>
+      {{
+        'BOOKING.SCHEMA_EDITOR.WORKPLACE_EDITOR.WORKPLACE_EDITOR_TITLE'
+          | translate
+      }}
+    </h2>
+    <form [formGroup]="workplaceForm" class="p-fluid">
+      <div class="p-field">
+        <label for="name" class="form-label">{{
+          'BOOKING.SCHEMA_EDITOR.WORKPLACE_EDITOR.NAME_LABEL' | translate
+        }}</label>
+        <input pInputText id="name" formControlName="name" />
+        @if(workplaceForm.get('name')?.invalid &&
+        workplaceForm.get('name')?.touched){
+        <div class="p-error">
+          {{
+            'BOOKING.SCHEMA_EDITOR.WORKPLACE_EDITOR.NAME_REQUIRED_ERROR'
+              | translate
+          }}
+        </div>
+        }
+      </div>
+
+      <div class="p-field">
+        <label for="description" class="form-label">{{
+          'BOOKING.SCHEMA_EDITOR.WORKPLACE_EDITOR.DESCRIPTION_LABEL' | translate
+        }}</label>
+        <input pInputText id="description" formControlName="description" />
+        @if(workplaceForm.get('description')?.invalid &&
+        workplaceForm.get('description')?.touched){
+        <div class="p-error">
+          {{
+            'BOOKING.SCHEMA_EDITOR.WORKPLACE_EDITOR.DESCRIPTION_REQUIRED_ERROR'
+              | translate
+          }}
+        </div>
+        }
+      </div>
+
+      <div class="field-container">
+        <div class="p-field">
+          <label for="position_x" class="form-label">{{
+            'BOOKING.SCHEMA_EDITOR.WORKPLACE_EDITOR.POSITION_X_LABEL'
+              | translate
+          }}</label>
+          <p-inputNumber
+            id="position_x"
+            formControlName="position_x"
+            min="25"
+            max="1170"
+          />
+          @if(workplaceForm.get('position_x')?.invalid &&
+          workplaceForm.get('position_x')?.touched){
+          <div class="p-error">
+            {{
+              'BOOKING.SCHEMA_EDITOR.WORKPLACE_EDITOR.POSITION_X_REQUIRED_ERROR'
+                | translate
+            }}
+          </div>
+          }
+        </div>
+
+        <div class="p-field">
+          <label for="position_y" class="form-label">{{
+            'BOOKING.SCHEMA_EDITOR.WORKPLACE_EDITOR.POSITION_Y_LABEL'
+              | translate
+          }}</label>
+          <p-inputNumber
+            id="position_y"
+            formControlName="position_y"
+            min="25"
+            max="730"
+          />
+          @if(workplaceForm.get('position_y')?.invalid &&
+          workplaceForm.get('position_y')?.touched){
+          <div class="p-error">
+            {{
+              'BOOKING.SCHEMA_EDITOR.WORKPLACE_EDITOR.POSITION_Y_REQUIRED_ERROR'
+                | translate
+            }}
+          </div>
+          }
+        </div>
+      </div>
+
+      <div class="field-container">
+        <div class="p-field">
+          <label for="booking_price" class="form-label">{{
+            'BOOKING.SCHEMA_EDITOR.WORKPLACE_EDITOR.BOOKING_PRICE_LABEL'
+              | translate
+          }}</label>
+          <p-inputNumber id="booking_price" formControlName="booking_price" />
+          @if(workplaceForm.get('booking_price')?.invalid &&
+          workplaceForm.get('booking_price')?.touched){
+          <div class="p-error">
+            {{
+              'BOOKING.SCHEMA_EDITOR.WORKPLACE_EDITOR.BOOKING_PRICE_REQUIRED_ERROR'
+                | translate
+            }}
+          </div>
+          }
+        </div>
+
+        <div class="p-field">
+          <label for="room_id" class="form-label">{{
+            'BOOKING.SCHEMA_EDITOR.WORKPLACE_EDITOR.ROOM_ID_LABEL' | translate
+          }}</label>
+          <p-inputNumber id="room_id" formControlName="room_id" />
+          @if(workplaceForm.get('room_id')?.invalid &&
+          workplaceForm.get('room_id')?.touched){
+          <div class="p-error">
+            {{
+              'BOOKING.SCHEMA_EDITOR.WORKPLACE_EDITOR.ROOM_ID_REQUIRED_ERROR'
+                | translate
+            }}
+          </div>
+          }
+        </div>
+      </div>
+      <div class="button-container">
+        @if(isEditing && !workplace?.isNew){
+        <!--        <p-button label="Edit Workplace" (click)="editWorkplace()" />-->
+        <button pButton pRipple (click)="editWorkplace()">
+          {{
+            'BOOKING.SCHEMA_EDITOR.WORKPLACE_EDITOR.EDIT_WORKPLACE_BUTTON_LABEL'
+              | translate
+          }}
+        </button>
+        <!--        <p-button label="Delete Workplace" (click)="deleteWorkplace()" />-->
+        <button pButton pRipple (click)="deleteWorkplace()">
+          {{
+            'BOOKING.SCHEMA_EDITOR.WORKPLACE_EDITOR.DELETE_WORKPLACE_BUTTON_LABEL'
+              | translate
+          }}
+        </button>
+        } @else {
+        <!--        <p-button label="Create" (click)="createWorkplace()" />-->
+        <button pButton pRipple (click)="createWorkplace()" class="add-button">
+          {{
+            'BOOKING.SCHEMA_EDITOR.WORKPLACE_EDITOR.CREATE_WORKPLACE_BUTTON_LABEL'
+              | translate
+          }}
+        </button>
+        }
+      </div>
+    </form>
+
+    } @else if(room) {
+    <h2>
+      {{ 'BOOKING.SCHEMA_EDITOR.ROOM_EDITOR.ROOM_EDITOR_TITLE' | translate }}
+    </h2>
+    <form [formGroup]="roomForm" class="p-fluid">
+      <div class="p-field">
+        <label for="room_name" class="form-label">
+          {{ 'BOOKING.SCHEMA_EDITOR.ROOM_EDITOR.NAME_LABEL' | translate }}
+        </label>
+        <input pInputText id="room_name" formControlName="name" />
+        @if(roomForm.get('name')?.invalid && roomForm.get('name')?.touched){
+        <div class="p-error">
+          {{
+            'BOOKING.SCHEMA_EDITOR.ROOM_EDITOR.NAME_REQUIRED_ERROR' | translate
+          }}
+        </div>
+        }
+      </div>
+
+      <div class="p-field">
+        <label for="room_description" class="form-label">
+          {{
+            'BOOKING.SCHEMA_EDITOR.ROOM_EDITOR.DESCRIPTION_LABEL' | translate
+          }}
+        </label>
+        <input pInputText id="room_description" formControlName="description" />
+        @if(roomForm.get('description')?.invalid &&
+        roomForm.get('description')?.touched){
+        <div class="p-error">
+          {{
+            'BOOKING.SCHEMA_EDITOR.ROOM_EDITOR.DESCRIPTION_REQUIRED_ERROR'
+              | translate
+          }}
+        </div>
+        }
+      </div>
+      <div class="field-container">
+        <div class="p-field">
+          <label for="room_area" class="form-label">
+            {{ 'BOOKING.SCHEMA_EDITOR.ROOM_EDITOR.AREA_LABEL' | translate }}
+          </label>
+          <p-inputNumber id="room_area" formControlName="area" />
+          @if(roomForm.get('area')?.invalid && roomForm.get('area')?.touched){
+          <div class="p-error">
+            {{
+              'BOOKING.SCHEMA_EDITOR.ROOM_EDITOR.AREA_REQUIRED_ERROR'
+                | translate
+            }}
+          </div>
+          }
+        </div>
+
+        <div class="p-field">
+          <label for="room_length" class="form-label">
+            {{
+              'BOOKING.SCHEMA_EDITOR.ROOM_EDITOR.LENGTH_LABEL' | translate
+            }}</label
+          >
+          <p-inputNumber id="room_length" formControlName="length" />
+          @if(roomForm.get('length')?.invalid &&
+          roomForm.get('length')?.touched){
+          <div class="p-error">
+            {{
+              'BOOKING.SCHEMA_EDITOR.ROOM_EDITOR.LENGTH_REQUIRED_ERROR'
+                | translate
+            }}
+          </div>
+          }
+        </div>
+
+        <div class="p-field">
+          <label for="room_width" class="form-label">
+            {{ 'BOOKING.SCHEMA_EDITOR.ROOM_EDITOR.WIDTH_LABEL' | translate }}
+          </label>
+          <p-inputNumber id="room_width" formControlName="width" />
+          @if(roomForm.get('width')?.invalid && roomForm.get('width')?.touched){
+          <div class="p-error">
+            {{
+              'BOOKING.SCHEMA_EDITOR.ROOM_EDITOR.WIDTH_REQUIRED_ERROR'
+                | translate
+            }}
+          </div>
+          }
+        </div>
+      </div>
+<!--      <div class="p-field">-->
+<!--        <label for="floor_number" class="form-label">-->
+<!--          {{-->
+<!--            'BOOKING.SCHEMA_EDITOR.ROOM_EDITOR.FLOOR_NUMBER_LABEL' | translate-->
+<!--          }}-->
+<!--        </label>-->
+<!--        <p-dropdown-->
+<!--          [options]="floorNumbers"-->
+<!--          formControlName="floor_number"-->
+<!--          placeholder="{{-->
+<!--            'BOOKING.SCHEMA_EDITOR.ROOM_EDITOR.FLOOR_NUMBER_PLACEHOLDER'-->
+<!--              | translate-->
+<!--          }}"-->
+<!--          id="floor_number"-->
+<!--        >-->
+<!--        </p-dropdown>-->
+<!--        @if(roomForm.get('floor_number')?.invalid &&-->
+<!--        roomForm.get('floor_number')?.touched){-->
+<!--        <div class="p-error">-->
+<!--          {{-->
+<!--            'BOOKING.SCHEMA_EDITOR.ROOM_EDITOR.FLOOR_NUMBER_ERROR' | translate-->
+<!--          }}-->
+<!--        </div>-->
+<!--        }-->
+<!--      </div>-->
+
+      <div class="button-container">
+        @if(isEditing){
+        <!--        <p-button label="Edit Room" (click)="editRoom()" />-->
+        <button pButton pRipple (click)="editRoom()" class="add-button">
+          {{
+            'BOOKING.SCHEMA_EDITOR.ROOM_EDITOR.EDIT_ROOM_BUTTON_LABEL'
+              | translate
+          }}
+        </button>
+        <!--        <p-button label="Delete Room" (click)="deleteRoom()" />-->
+
+<!--        <button pButton pRipple (click)="deleteRoom()" class="add-button">-->
+<!--          {{-->
+<!--            'BOOKING.SCHEMA_EDITOR.ROOM_EDITOR.DELETE_ROOM_BUTTON_LABEL'-->
+<!--              | translate-->
+<!--          }}-->
+<!--        </button>-->
+        }
+      </div>
+    </form>
+
+    } @else {
+    <div class="editor-placeholder">
+      <h2>
+        {{ 'BOOKING.SCHEMA_EDITOR.PLACEHOLDER.PLACEHOLDER_TITLE' | translate }}
+      </h2>
+      <div class="placeholder-text">
+        {{
+          'BOOKING.SCHEMA_EDITOR.PLACEHOLDER.PLACEHOLDER_SUBTITLE' | translate
+        }}
+      </div>
+      <!--    <p-button-->
+      <!--      label="New Workplace"-->
+      <!--      icon="pi pi-plus"-->
+      <!--      (click)="addWorkplace()"-->
+      <!--    />-->
+      <button pButton pRipple (click)="addWorkplace()" class="add-button">
+        <span class="pi pi-plus"></span>
+        <span>
+          {{
+            'BOOKING.SCHEMA_EDITOR.PLACEHOLDER.NEW_WORKPLACE_LABEL' | translate
+          }}
+        </span>
+      </button>
+    </div>
+    }
+  </p-card>
+</div>

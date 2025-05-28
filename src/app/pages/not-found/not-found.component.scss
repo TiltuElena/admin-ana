@@ -1,0 +1,28 @@
+.not-found-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  margin: 5% 15%;
+
+  path {
+    fill: #388e3c;
+  }
+
+  h3 {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  p {
+    color: #8690a3;
+    text-align: center;
+  }
+}
+
+:host ::ng-deep {
+  .p-button {
+    background: #388e3c;
+    cursor: pointer;
+  }
+}

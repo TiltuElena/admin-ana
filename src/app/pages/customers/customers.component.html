@@ -1,0 +1,175 @@
+<div class="page-header">
+  {{ 'CUSTOMERS.PAGE_TITLE' | translate }}
+</div>
+<div class="card">
+  <p-table
+    #dt
+    [value]="customers$.getValue()"
+    [rowHover]="true"
+    [(selection)]="selectedCustomers"
+    [rows]="5"
+    [rowsPerPageOptions]="[5, 10, 15]"
+    [loading]="loading"
+    [paginator]="true"
+    [globalFilterFields]="['username', 'email', 'phone', 'createdAt', 'orderCount']"
+    [tableStyle]="{ 'min-width': '75rem' }"
+    (sortFunction)="customSort($event)"
+    [customSort]="true"
+  >
+    <ng-template pTemplate="caption">
+      <div class="table-caption">
+        <button
+          pButton
+          pRipple
+          type="button"
+          severity="success"
+          class="icon-button new-button"
+          (click)="openNew()"
+        >
+          <span class="pi pi-plus"></span>
+          <span>{{ 'CUSTOMERS.NEW_BUTTON_LABEL' | translate }}</span>
+        </button>
+        <div>
+          <p-iconField iconPosition="left">
+            <p-inputIcon>
+              <i class="pi pi-search"></i>
+            </p-inputIcon>
+            <input
+              pInputText
+              type="text"
+              (input)="dt.filterGlobal($any($event.target).value, 'contains')"
+              placeholder="{{ 'CUSTOMERS.GLOBAL_SEARCH_INPUT_PLACEHOLDER' | translate }}"
+            />
+          </p-iconField>
+        </div>
+      </div>
+    </ng-template>
+    <ng-template pTemplate="header">
+      <tr>
+        <th pSortableColumn="username" style="width: 22%">
+          <div class="table-header">
+            <span> {{ 'CUSTOMERS.TABLE_HEADER.NAME' | translate }}</span>
+            <span class="sort-icon-wrapper"><p-sortIcon field="username" /></span>
+            <p-columnFilter
+              [showAddButton]="false"
+              [showOperator]="false"
+              type="text"
+              field="username"
+              display="menu"
+            />
+          </div>
+        </th>
+        <th pSortableColumn="email" style="width: 22%">
+          <div class="table-header">
+            <span>{{ 'CUSTOMERS.TABLE_HEADER.EMAIL' | translate }}</span>
+            <span class="sort-icon-wrapper"><p-sortIcon field="email" /></span>
+            <p-columnFilter
+              [showAddButton]="false"
+              [showOperator]="false"
+              type="text"
+              field="email"
+              display="menu"
+            />
+          </div>
+        </th>
+        <th pSortableColumn="phone" style="width: 15%">
+          <div class="table-header">
+            <span>{{ 'CUSTOMERS.TABLE_HEADER.PHONE' | translate }}</span>
+            <span class="sort-icon-wrapper">
+              <p-sortIcon field="phone" />
+            </span>
+            <p-columnFilter
+              [showAddButton]="false"
+              [showOperator]="false"
+              type="text"
+              field="phone"
+              display="menu"
+            />
+          </div>
+        </th>
+        <th pSortableColumn="createdAt" style="width: 15%">
+          <div class="table-header">
+            <div>{{ 'CUSTOMERS.TABLE_HEADER.CREATED_AT' | translate }}</div>
+            <span class="sort-icon-wrapper">
+              <p-sortIcon field="createdAt" />
+            </span>
+          </div>
+        </th>
+        <th pSortableColumn="orderCount" style="width: 12%">
+          <div class="table-header">
+            <span>{{ 'CUSTOMERS.TABLE_HEADER.NR_OF_ORDERS' | translate }}</span>
+            <span class="sort-icon-wrapper">
+              <p-sortIcon field="orderCount" />
+            </span>
+          </div>
+        </th>
+        <th style="width: 5%"></th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-customer>
+      <tr>
+        <td>
+          <img
+            [alt]="customer.username"
+            [src]="customer.photoUrl ? 'http://localhost:3000' + customer.photoUrl : defaultImage"
+            width="32"
+            style="vertical-align: middle"
+          />
+          <span>
+            {{ customer.username }}
+          </span>
+        </td>
+        <td>
+          <span>
+            {{ customer.email }}
+          </span>
+        </td>
+        <td>
+          <span>
+            {{ customer.phone }}
+          </span>
+        </td>
+
+        <td>
+          <span> {{ customer.createdAt | date }}</span>
+        </td>
+        <td>
+          <span>
+            {{ customer.orderCount }}
+          </span>
+        </td>
+
+        <td>
+          <div class="button-wrapper">
+            <button
+              pButton
+              pRipple
+              icon="pi pi-pencil"
+              (click)="editCustomer(customer)"
+              class="p-button-rounded p-button-text"
+            ></button>
+            <button
+              pButton
+              pRipple
+              icon="pi pi-trash"
+              (click)="deleteCustomer(customer)"
+              class="p-button-rounded p-button-text p-button-danger"
+            ></button>
+          </div>
+        </td>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="emptymessage">
+      <tr>
+        <td colspan="8">
+          {{ 'CUSTOMERS.GLOBAL_SEARCH_PLACEHOLDER' | translate }}
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+
+  <app-dialog
+    [customerDialog]="customerDialog"
+    (changeDialogState)="handleState($event)"
+  ></app-dialog>
+</div>

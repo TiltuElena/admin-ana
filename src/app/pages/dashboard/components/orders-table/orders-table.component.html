@@ -1,0 +1,82 @@
+<div class="table-card">
+  <p-card>
+    <div class="orders-table-header">
+      <span class="orders-table-header-title">
+        {{ 'DASHBOARD.ORDERS_TABLE.TITLE' | translate }}
+      </span>
+      <button
+        pButton
+        pRipple
+        [text]="true"
+        [plain]="true"
+        (click)="redirectToOrders()"
+      >
+        <span>
+          {{ 'DASHBOARD.ORDERS_TABLE.REDIRECT_TO_ORDERS' | translate }}</span
+        >
+      </button>
+    </div>
+
+    <p-divider />
+
+    <p-table [value]="orders">
+      <ng-template pTemplate="body" let-order>
+        <tr>
+          <td>{{ order.bookingDate | date }}</td>
+          <td>{{ order.username }}</td>
+          <td class="table-cell-compound-column">
+            <div>
+              <span class="text-base">{{ order.number_of_workplaces }} </span>
+              <span class="text-addition">
+                {{
+                  'DASHBOARD.ORDERS_TABLE.NR_OF_WORKPLACES_CELL_TEXT_ADDITION'
+                    | translate
+                }}</span
+              >
+            </div>
+            <div>
+              <span class="text-base">{{
+                order.totalPrice | mdlCurrency
+              }}</span>
+              <span class="text-addition">
+                {{
+                  'DASHBOARD.ORDERS_TABLE.TOTAL_CELL_TEXT_ADDITION' | translate
+                }}</span
+              >
+            </div>
+          </td>
+          <td>
+            <div class="table-cell-compound-column">
+              <div>
+                <span class="text-addition">
+                  {{
+                    'DASHBOARD.ORDERS_TABLE.FROM_DATE_CELL_TEXT_ADDITION'
+                      | translate
+                  }}
+                </span>
+                <span class="text-base">{{ order.bookedFrom | date }}</span>
+              </div>
+              <div>
+                <span class="text-addition">
+                  {{
+                    'DASHBOARD.ORDERS_TABLE.TO_DATE_CELL_TEXT_ADDITION'
+                      | translate
+                  }}
+                </span>
+                <span class="text-base">{{ order.bookedTo | date }}</span>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div class="tag-cell">
+              <p-tag
+                [value]="order.status.toUpperCase()"
+                [severity]="getSeverity(order.status)"
+              />
+            </div>
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </p-card>
+</div>

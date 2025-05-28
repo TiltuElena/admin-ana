@@ -1,0 +1,131 @@
+<!--<header>-->
+<!--  <div class="logo">-->
+<!--    <span>Nortek</span>-->
+<!--    <span>Bookings</span>-->
+<!--  </div>-->
+
+<!--  <div class="header-right">-->
+<!--    <div class="menu-wrapper">-->
+<!--      <p-menu #menu [model]="items" [popup]="true" [styleClass]="'custom-menu'">-->
+<!--        <ng-template let-item pTemplate="item">-->
+<!--          <div class="p-menuitem-content" (click)="item.command()">-->
+<!--            <div class="lng-button">-->
+<!--              <img [src]="item.icon" alt="flag" class="flag-img" />-->
+<!--              <span>{{ item.label }}</span>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </ng-template>-->
+<!--      </p-menu>-->
+
+<!--      <button class="p-button p-component" (click)="menu.toggle($event)">-->
+<!--        <img [src]="languageImg.imgSrc" alt="Menu Image" class="flag-img" />-->
+<!--      </button>-->
+<!--    </div>-->
+
+<!--    <p-toggleButton-->
+<!--      [(ngModel)]="checked"-->
+<!--      offIcon="pi pi-moon"-->
+<!--      onIcon="pi pi-sun"-->
+<!--      (onChange)="changeTheme()"-->
+<!--    />-->
+
+<!--    <div class="avatar-menu-wrapper">-->
+<!--      <p-menu-->
+<!--        #avatar-->
+<!--        [model]="user_info"-->
+<!--        [popup]="true"-->
+<!--        [styleClass]="'avatar-custom-menu'"-->
+<!--      >-->
+<!--        <ng-template pTemplate="item" let-item>-->
+<!--          <a [href]="item.url" class="p-menuitem-link">-->
+<!--            <span [class]="item.icon"></span>-->
+<!--            <span class="ml-2">{{ item.label }}</span>-->
+<!--          </a>-->
+<!--        </ng-template>-->
+<!--      </p-menu>-->
+
+<!--      <button class="p-button p-component user-button" (click)="avatar.toggle($event)">-->
+<!--        <div class="avatar-container">-->
+<!--          <p-avatar-->
+<!--            icon="pi pi-user"-->
+<!--            styleClass="mr-2"-->
+<!--            size="normal"-->
+<!--            [style]="{ 'background-color': '#ece9fc', color: '#2a1261' }"-->
+<!--          />-->
+<!--          <div class="user-info">-->
+<!--            <span class="user-name">Name of the user</span>-->
+<!--            <span>Admin</span>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </button>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</header>-->
+
+<div class="card">
+  <p-toolbar>
+    <ng-template pTemplate="start">
+      <div class="logo">
+        <span>Nortek</span>
+        <span>Bookings</span>
+      </div>
+    </ng-template>
+
+    <ng-template pTemplate="end">
+      <div class="menu-wrapper">
+        <p-menu #menu [model]="items" [popup]="true" [styleClass]="'custom-menu'">
+          <ng-template let-item pTemplate="item">
+            <div class="p-menuitem-content" (click)="item.command()">
+              <div class="lng-button">
+                <img [src]="item.icon" alt="flag" class="flag-img" />
+                <span>{{ item.label }}</span>
+              </div>
+            </div>
+          </ng-template>
+        </p-menu>
+
+        <button class="p-button p-component" (click)="menu.toggle($event)">
+          <img [src]="languageImg.imgSrc" alt="Menu Image" class="flag-img" />
+        </button>
+      </div>
+
+      <p-toggleButton
+        [(ngModel)]="checked"
+        offIcon="pi pi-moon"
+        onIcon="pi pi-sun"
+        (onChange)="changeTheme()"
+      />
+
+      <div class="avatar-menu-wrapper">
+        <p-menu
+          #avatar
+          [model]="user_info"
+          [popup]="true"
+          [styleClass]="'avatar-custom-menu'"
+        >
+          <ng-template pTemplate="item" let-item>
+            <a [href]="item.url" class="p-menuitem-link">
+              <span [class]="item.icon"></span>
+              <span class="ml-2">{{ item.label }}</span>
+            </a>
+          </ng-template>
+        </p-menu>
+
+        <button class="p-button p-component user-button" (click)="avatar.toggle($event)">
+          <div class="avatar-container">
+            <p-avatar
+              icon="pi pi-user"
+              styleClass="mr-2"
+              size="normal"
+              [style]="{ 'background-color': '#ece9fc', color: '#2a1261' }"
+            />
+            <div class="user-info">
+              <span class="user-name">Tîltu Elena</span>
+              <span>Admin</span>
+            </div>
+          </div>
+        </button>
+      </div>
+    </ng-template>
+  </p-toolbar>
+</div>

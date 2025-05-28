@@ -1,0 +1,97 @@
+:host ::ng-deep {
+  .p-password .p-icon {
+    position: relative;
+    top: -7px;
+  }
+
+  .p-button,
+  .p-password,
+  .p-inputtext {
+    width: 100%;
+  }
+
+  //.p-button {
+  //  background: #016429;
+  //}
+  //
+  //.p-button:hover {
+  //  background: #01753a;
+  //}
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10% 15%;
+  height: auto;
+
+  .register-form-container {
+    width: 50%;
+
+    .register-form-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+
+      .register-form-header-item {
+        cursor: pointer;
+        font-weight: 500;
+
+        &:first-child {
+          font-size: 2rem;
+        }
+
+        &:last-child {
+          font-size: 1.2rem;
+          color: #388e3c;
+        }
+      }
+    }
+
+    .register-form {
+      padding: 2rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      .register-form-fields {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        justify-content: center;
+
+        .form-field {
+          display: flex;
+          flex-direction: column;
+          gap: 0.4rem;
+          width: 100%;
+
+          span {
+            font-size: 17px;
+          }
+        }
+      }
+
+      .button-container {
+        width: 100%;
+      }
+    }
+  }
+
+  .button {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 700px) {
+  .card {
+    padding: 15% 5%;
+
+    .register-form-container {
+      width: 100%;
+    }
+  }
+}

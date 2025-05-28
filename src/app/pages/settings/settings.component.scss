@@ -1,0 +1,107 @@
+:host ::ng-deep {
+  .p-password .p-icon {
+    position: relative;
+    top: -7px;
+  }
+  .p-button,
+  .p-password,
+  .p-inputtext {
+    width: 100%;
+  }
+
+  .p-card {
+    width: 100%;
+  }
+
+  //.p-button {
+  //  background: #016429;
+  //}
+  //
+  //.p-button:hover {
+  //  background: #01753a;
+  //}
+
+  //.p-fileupload-choose {
+  //  display: flex;
+  //  gap: 10px;
+  //}
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  padding: 8% 25%;
+  height: auto;
+  width: 100%;
+
+  .account-form-container {
+    .avatar-picker {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+
+      .file-picker-button {
+        display: flex;
+        gap: 0.5rem;
+      }
+    }
+  }
+
+  .account-form {
+    padding: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .account-form-fields {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .button-container {
+      width: 100%;
+    }
+  }
+
+  .form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    width: 100%;
+
+    span {
+      font-size: 1.2rem;
+      font-weight: 600;
+      line-height: 30px;
+    }
+  }
+
+  .button {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 1000px) {
+  .card {
+    .account-form-container {
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .card {
+    padding: 2rem;
+
+    .account-form-container {
+      width: 100%;
+    }
+  }
+}

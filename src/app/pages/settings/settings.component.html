@@ -1,0 +1,206 @@
+<div>
+  <h2>{{ 'SETTINGS.USER_SETTINGS.SECTION_TITLE' | translate }}</h2>
+  <div class="card">
+    <p-card>
+      <div class="account-form-container">
+        <div class="avatar-picker">
+          <p-avatar
+            [image]="avatarImage"
+            styleClass="mr-2"
+            size="xlarge"
+            shape="circle"
+          >
+          </p-avatar>
+
+          <div>
+            <input
+              type="file"
+              accept="image/*"
+              (change)="onFileSelect($event)"
+              style="display: none"
+              #fileInput
+            />
+
+            <button
+              pButton
+              pRipple
+              type="button"
+              class="file-picker-button"
+              (click)="fileInput.click()"
+              severity="success"
+            >
+              <span class="pi pi-upload"></span>
+              <span>
+                {{ 'SETTINGS.USER_SETTINGS.CHANGE_USER_AVATAR_BUTTON_LABEL' | translate }}
+              </span>
+            </button>
+          </div>
+
+          <p-button (click)="deleteAvatar()" severity="success">
+            {{ 'SETTINGS.USER_SETTINGS.DELETE_USER_AVATAR_BUTTON_LABEL' | translate }}
+          </p-button>
+        </div>
+
+        <form class="account-form" [formGroup]="accountForm">
+          <div class="account-form-fields">
+            <div class="form-field">
+              <span>{{ 'SETTINGS.USER_SETTINGS.USERNAME_LABEL' | translate }}</span>
+              <input
+                type="text"
+                pInputText
+                formControlName="username"
+                id="username"
+                [ngClass]="{
+                  'ng-invalid ng-dirty':
+                    accountForm.get('username')?.touched &&
+                    accountForm.get('username')?.invalid
+                }"
+              />
+              @if(accountForm.get('username')?.hasError('required') &&
+              accountForm.get('username')?.touched){
+              <div class="p-error">{{ 'SETTINGS.USER_SETTINGS.USERNAME_REQUIRED_ERROR' | translate }}</div>
+              }
+            </div>
+            <div class="form-field">
+              <span>{{ 'SETTINGS.USER_SETTINGS.EMAIL_LABEL' | translate }}</span>
+              <input
+                type="text"
+                pInputText
+                formControlName="email"
+                id="email"
+                [ngClass]="{
+                  'ng-invalid ng-dirty':
+                    accountForm.get('email')?.touched &&
+                    accountForm.get('email')?.invalid
+                }"
+              />
+              @if(accountForm.get('email')?.hasError('required') &&
+              accountForm.get('email')?.touched){
+              <div class="p-error">
+                {{ 'SETTINGS.USER_SETTINGS.EMAIL_REQUIRED_ERROR' | translate }}
+              </div>
+              } @else if (accountForm.get('email')?.hasError('email')){
+              <div class="p-error">{{ 'SETTINGS.USER_SETTINGS.EMAIL_INVALID_ERROR' | translate }}</div>
+              }
+            </div>
+          </div>
+          <div class="button-container">
+
+            <button
+              pButton
+              pRipple
+              severity="success"
+              [raised]="true"
+              (click)="submit()"
+              class="button"
+            >
+             <span> {{ 'SETTINGS.USER_SETTINGS.SAVE_BUTTON_LABEL' | translate }}</span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </p-card>
+  </div>
+
+  <h2>{{ 'SETTINGS.PASSWORD_SETTINGS.SECTION_TITLE' | translate }}</h2>
+  <div class="card">
+    <p-card>
+      <div class="account-form-container">
+        <form class="account-form" [formGroup]="changePasswordForm">
+          <div class="form-field">
+            <span>{{ 'SETTINGS.PASSWORD_SETTINGS.CURRENT_PASSWORD_LABEL' | translate }}</span>
+            <p-password
+              formControlName="old_password"
+              required
+              [toggleMask]="true"
+              [feedback]="false"
+              id="old_password"
+              [ngClass]="{
+                'ng-invalid ng-dirty':
+                  changePasswordForm.get('old_password')?.touched &&
+                  changePasswordForm.get('old_password')?.invalid
+              }"
+            />
+            @if(changePasswordForm.get('old_password')?.hasError('required') &&
+            changePasswordForm.get('old_password')?.touched){
+            <div class="p-error">{{ 'SETTINGS.PASSWORD_SETTINGS.CURRENT_PASSWORD_REQUIRED_ERROR' | translate }}</div>
+            }
+          </div>
+          <div class="form-field">
+            <span>{{ 'SETTINGS.PASSWORD_SETTINGS.NEW_PASSWORD_LABEL' | translate }}</span>
+            <p-password
+              formControlName="new_password"
+              required
+              [toggleMask]="true"
+              [feedback]="false"
+              id="new_password"
+              [ngClass]="{
+                'ng-invalid ng-dirty':
+                  changePasswordForm.get('new_password')?.touched &&
+                  changePasswordForm.get('new_password')?.invalid
+              }"
+            />
+            @if(changePasswordForm.get('new_password')?.hasError('required') &&
+            changePasswordForm.get('new_password')?.touched){
+            <div class="p-error">
+              {{ 'SETTINGS.PASSWORD_SETTINGS.NEW_PASSWORD_REQUIRED_ERROR' | translate }}
+            </div>
+            } @else if
+            (changePasswordForm.get('new_password')?.hasError('samePassword')&&
+            changePasswordForm.get('new_password')?.touched){
+            <div class="p-error">
+              {{ 'SETTINGS.PASSWORD_SETTINGS.NEW_PASSWORD_MATCH_ERROR' | translate }}
+            </div>
+            }
+          </div>
+          <div class="form-field">
+            <span>{{ 'SETTINGS.PASSWORD_SETTINGS.CONFIRM_PASSWORD_LABEL' | translate }}</span>
+            <p-password
+              formControlName="new_password_confirmation"
+              required
+              [toggleMask]="true"
+              [feedback]="false"
+              id="new_password_confirmation"
+              [ngClass]="{
+                'ng-invalid ng-dirty':
+                  changePasswordForm.get('new_password_confirmation')
+                    ?.touched &&
+                  changePasswordForm.get('new_password_confirmation')?.invalid
+              }"
+            />
+            @if(changePasswordForm.get('new_password_confirmation')?.hasError('required')
+            && changePasswordForm.get('new_password_confirmation')?.touched){
+            <div class="p-error">
+              {{ 'SETTINGS.PASSWORD_SETTINGS.CONFIRM_PASSWORD_REQUIRED_ERROR' | translate }}
+            </div>
+            } @else if
+            (changePasswordForm.get('new_password_confirmation')?.hasError('passwordMismatch')
+            && changePasswordForm.get('new_password_confirmation')?.touched){
+            <div class="p-error">
+              {{ 'SETTINGS.PASSWORD_SETTINGS.CONFIRM_PASSWORD_MISMATCH' | translate }}
+            </div>
+            }
+          </div>
+          <div class="button-container">
+            <!--            <p-button-->
+            <!--              label="Change password"-->
+            <!--              severity="success"-->
+            <!--              [raised]="true"-->
+            <!--              (click)="changePassword()"-->
+            <!--            ></p-button>-->
+            <button
+              pButton
+              pRipple
+              severity="success"
+              [raised]="true"
+              (click)="changePassword()"
+              class="button"
+            >
+             <span> {{ 'SETTINGS.PASSWORD_SETTINGS.CHANGE_PASSWORD_BUTTON_LABEL' | translate }}</span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </p-card>
+  </div>
+</div>

@@ -1,0 +1,321 @@
+<p-dialog
+  [(visible)]="orderDialog"
+  header="Order Details"
+  [modal]="true"
+  [draggable]="false"
+  (onHide)="onDialogHide()"
+  [dismissableMask]="true"
+>
+  <ng-template pTemplate="content">
+    <div class="card">
+      <div class="order-form" [formGroup]="orderForm">
+        <div class="field-container">
+          <div class="field">
+            <label for="username">
+              {{
+                'ORDERS.EDIT.EDIT_ORDER_DETAILS_DIALOG_FORM.CUSTOMER_LABEL'
+                  | translate
+              }}</label
+            >
+            <p-dropdown
+              [options]="customerOptions"
+              formControlName="username"
+              optionLabel="label"
+              placeholder="{{'ORDERS.EDIT.EDIT_ORDER_DETAILS_DIALOG_FORM.CUSTOMER_PLACEHOLDER' | translate}}"
+              required
+              id="username"
+              [ngClass]="{
+                'ng-invalid ng-dirty':
+                  orderForm.get('username')?.touched &&
+                  orderForm.get('username')?.invalid
+              }"
+            />
+            @if(orderForm.get('username')?.touched &&
+            orderForm.get('username')?.getError('required')){
+            <small class="p-error">
+              {{
+                'ORDERS.EDIT.EDIT_ORDER_DETAILS_DIALOG_FORM.CUSTOMER_REQUIRED_ERROR'
+                  | translate
+              }}
+            </small>
+            }
+          </div>
+
+          <div class="field">
+            <label for="email">
+              {{
+                'ORDERS.EDIT.EDIT_ORDER_DETAILS_DIALOG_FORM.EMAIL_LABEL'
+                  | translate
+              }}
+            </label>
+            <input
+              type="text"
+              pInputText
+              id="email"
+              required
+              formControlName="email"
+              placeholder="example@gmail.com"
+              [ngClass]="{
+                'ng-invalid ng-dirty':
+                  orderForm.get('email')?.touched &&
+                  orderForm.get('email')?.invalid
+              }"
+            />
+            @if(orderForm.get('email')?.touched &&
+            orderForm.get('email')?.getError('required')){
+            <small class="p-error">
+              {{
+                'ORDERS.EDIT.EDIT_ORDER_DETAILS_DIALOG_FORM.EMAIL_REQUIRED_ERROR'
+                  | translate
+              }}
+            </small>
+            } @if(orderForm.get('email')?.touched &&
+            orderForm.get('email')?.getError('email')){
+            <small class="p-error">
+              {{
+                'ORDERS.EDIT.EDIT_ORDER_DETAILS_DIALOG_FORM.EMAIL_INVALID_ERROR'
+                  | translate
+              }}
+            </small>
+            }
+          </div>
+
+          <div class="field">
+            <label for="phone">
+              {{
+                'ORDERS.EDIT.EDIT_ORDER_DETAILS_DIALOG_FORM.PHONE_LABEL'
+                  | translate
+              }}
+            </label>
+            <input
+              type="text"
+              pInputText
+              id="phone"
+              required
+              formControlName="phone"
+              placeholder="(+373)678326536"
+              [ngClass]="{
+                'ng-invalid ng-dirty':
+                  orderForm.get('phone')?.touched &&
+                  orderForm.get('phone')?.invalid
+              }"
+            />
+            @if(orderForm.get('phone')?.touched &&
+            orderForm.get('phone')?.getError('required')){
+            <small class="p-error">
+              {{
+                'ORDERS.EDIT.EDIT_ORDER_DETAILS_DIALOG_FORM.PHONE_REQUIRED_ERROR'
+                  | translate
+              }}</small
+            >
+            } @if(orderForm.get('phone')?.touched &&
+            orderForm.get('phone')?.getError('pattern')){
+            <small class="p-error">
+              {{
+                'ORDERS.EDIT.EDIT_ORDER_DETAILS_DIALOG_FORM.PHONE_INVALID_ERROR'
+                  | translate
+              }}
+            </small>
+            }
+          </div>
+
+          <div class="field-aligner">
+            <div class="field">
+              <label for="booked_from">
+                {{
+                  'ORDERS.EDIT.EDIT_ORDER_DETAILS_DIALOG_FORM.BOOKED_FROM_LABEL'
+                    | translate
+                }}
+              </label>
+              <p-calendar
+                required
+                id="booked_from"
+                formControlName="booked_from"
+                appendTo="body"
+                [showIcon]="true"
+                placeholder="{{'ORDERS.EDIT.EDIT_ORDER_DETAILS_DIALOG_FORM.BOOKED_FROM_PLACEHOLDER'  | translate}}"
+                [ngClass]="{
+                  'ng-invalid ng-dirty':
+                    orderForm.get('booked_from')?.touched &&
+                    orderForm.get('booked_from')?.invalid
+                }"
+              />
+              @if(orderForm.get('booked_from')?.touched &&
+              orderForm.get('booked_from')?.getError('required')){
+              <small class="p-error">
+                {{
+                  'ORDERS.EDIT.EDIT_ORDER_DETAILS_DIALOG_FORM.BOOKED_FROM_REQUIRED_ERROR'
+                    | translate
+                }}</small
+              >
+              }
+            </div>
+
+            <div class="field">
+              <label for="booked_to">
+                {{
+                  'ORDERS.EDIT.EDIT_ORDER_DETAILS_DIALOG_FORM.BOOKED_TO_LABEL'
+                    | translate
+                }}
+              </label>
+              <p-calendar
+                required
+                id="booked_to"
+                formControlName="booked_to"
+                appendTo="body"
+                [showIcon]="true"
+                placeholder="{{
+                  'ORDERS.EDIT.EDIT_ORDER_DETAILS_DIALOG_FORM.BOOKED_TO_PLACEHOLDER'
+                    | translate
+                }}"
+                [ngClass]="{
+                  'ng-invalid ng-dirty':
+                    orderForm.get('booked_to')?.touched &&
+                    orderForm.get('booked_to')?.invalid
+                }"
+              />
+              @if(orderForm.get('booked_to')?.touched &&
+              orderForm.get('booked_to')?.getError('required')){
+              <small class="p-error">
+                {{
+                  'ORDERS.EDIT.EDIT_ORDER_DETAILS_DIALOG_FORM.BOOKED_TO_REQUIRED_ERROR'
+                    | translate
+                }}
+              </small>
+              } @if(orderForm.get('booked_to')?.touched &&
+              orderForm.get('booked_to')?.hasError('incorrect')){
+              <small class="p-error">
+                {{
+                  'ORDERS.EDIT.EDIT_ORDER_DETAILS_DIALOG_FORM.BOOKED_TO_SMALLER_THAN_BOOKED_FROM_ERROR'
+                    | translate
+                }}
+              </small>
+              }
+            </div>
+          </div>
+
+          <div class="field-aligner">
+            <div class="field">
+              <label for="status">
+                {{
+                  'ORDERS.EDIT.EDIT_ORDER_DETAILS_DIALOG_FORM.STATUS_LABEL'
+                    | translate
+                }}
+              </label>
+              <p-dropdown
+                [options]="statusOptions"
+                formControlName="status"
+                optionLabel="label"
+                placeholder="{{
+                  'ORDERS.EDIT.EDIT_ORDER_DETAILS_DIALOG_FORM.STATUS_PLACEHOLDER'
+                    | translate
+                }}"
+                appendTo="body"
+                required
+                id="status"
+                [ngClass]="{
+                  'ng-invalid ng-dirty':
+                    orderForm.get('status')?.touched &&
+                    orderForm.get('status')?.invalid
+                }"
+                ><ng-template let-option pTemplate="item">
+                  <p-tag
+                    [value]="option.label"
+                    [severity]="getSeverity(option.value)"
+                  /> </ng-template
+              ></p-dropdown>
+              @if(orderForm.get('status')?.touched &&
+              orderForm.get('status')?.getError('required')){
+              <small class="p-error">
+                {{
+                  'ORDERS.EDIT.EDIT_ORDER_DETAILS_DIALOG_FORM.STATUS_REQUIRED_ERROR'
+                    | translate
+                }}
+              </small>
+              }
+            </div>
+
+            <div class="field">
+              <label for="payment_status">
+                {{
+                  'ORDERS.EDIT.EDIT_ORDER_DETAILS_DIALOG_FORM.PAYMENT_STATUS_LABEL'
+                    | translate
+                }}
+              </label>
+              <p-dropdown
+                [options]="paymentStatusOptions"
+                formControlName="payment_status"
+                optionLabel="label"
+                placeholder="{{
+                  'ORDERS.EDIT.EDIT_ORDER_DETAILS_DIALOG_FORM.PAYMENT_STATUS_PLACEHOLDER'
+                    | translate
+                }}"
+                required
+                appendTo="body"
+                id="payment_status"
+                [ngClass]="{
+                  'ng-invalid ng-dirty':
+                    orderForm.get('payment_status')?.touched &&
+                    orderForm.get('payment_status')?.invalid
+                }"
+                ><ng-template let-option pTemplate="item">
+                  <span>{{ option.label }}</span>
+                </ng-template></p-dropdown
+              >
+              @if(orderForm.get('payment_status')?.touched &&
+              orderForm.get('payment_status')?.getError('required')){
+              <small class="p-error">
+                {{
+                  'ORDERS.EDIT.EDIT_ORDER_DETAILS_DIALOG_FORM.PAYMENT_STATUS_REQUIRED_ERROR'
+                    | translate
+                }}
+              </small>
+              }
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+  <ng-template pTemplate="footer">
+    <div class="dialog-action-buttons">
+      <button
+        pButton
+        pRipple
+        type="button"
+        class="icon-button"
+        severity="danger"
+        [text]="true"
+        (click)="hideDialog()"
+      >
+        <span class="pi pi-times"></span>
+        <span>
+          {{
+            'ORDERS.EDIT.EDIT_ORDER_DETAILS_DIALOG_FORM.DIALOG_ACTIONS_CANCEL_BUTTON'
+              | translate
+          }}
+        </span>
+      </button>
+
+      <button
+        pButton
+        pRipple
+        type="button"
+        class="icon-button"
+        severity="success"
+        [text]="true"
+        (click)="saveChanges()"
+      >
+        <span class="pi pi-check"></span>
+        <span>
+          {{
+            'ORDERS.EDIT.EDIT_ORDER_DETAILS_DIALOG_FORM.DIALOG_ACTIONS_SAVE_BUTTON'
+              | translate
+          }}</span
+        >
+      </button>
+    </div>
+  </ng-template>
+</p-dialog>
+
+<p-confirmDialog />

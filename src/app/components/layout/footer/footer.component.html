@@ -1,0 +1,21 @@
+<div class="card">
+  <p-toolbar>
+    <ng-template pTemplate="start">
+      <div>&copy; 2025 Nortek Bookings</div>
+    </ng-template>
+
+    <ng-template pTemplate="end">
+      <div class="socials">
+        @for(social of socials; track social) {
+          <span
+            class="link"
+            [class]="social.icon"
+            (click)="navigateToUrl(social.url)"
+            role="button"
+            tabindex="0"
+          ></span>
+        }
+      </div>
+    </ng-template>
+  </p-toolbar>
+</div>
